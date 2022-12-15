@@ -1,29 +1,26 @@
 import React from 'react'
 
+import Button from '@mui/material/Button';
 function Navbar() {
     return (
         <>
-            <header className="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-12">
-                            <nav className="main-nav">
-                                <a href="index.html" className="logo">
-                                </a>
-                                <ul className="nav">
-                                    <li><a href="index.html" className="active">Home</a></li>
-                                    <li><a href="listing.html">Languages</a></li>
-                                    <li><a href="contact.html">Contact Us</a></li>
-                                    <li><div className="main-white-button"><a href="#"><i className="fa fa-plus"></i> Sign Up / Log In</a></div></li>
-                                </ul>
-                                <a className='menu-trigger'>
-                                    <span>Menu</span>
-                                </a>
-                            </nav>
-                        </div>
-                    </div>
+            <nav className="navbar navbar-expand-lg ">
+                <img src="src/assets/logo.png" className='icon' alt="" />
+                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+
+                <div className="collapse navbar-collapse right-navbar" id="navbarSupportedContent" >
+                    <form className="form-inline my-2 my-lg-0">
+                        <input className="form-control mr-sm-2" type="search" placeholder="Search for users" aria-label="Search"/>
+                            <button className="btn btn-outline-success my-2 my-sm-0" type="submit">🔍</button>
+                    </form>
+                    
+                    <Button variant='contained' color="success" sx={{ zIndex: "1", margin:"1rem 3rem"}}>
+                            Login
+                        </Button>
                 </div>
-            </header>
+            </nav>
         </>
     )
 }
