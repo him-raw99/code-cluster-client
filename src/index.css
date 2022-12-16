@@ -17,11 +17,11 @@ body{
   float: left;
   color: black;
   text-align: center;
-  padding: 12px;
   text-decoration: none;
   font-size: 18px; 
-  line-height: 15px;
+  line-height: 35px;
   border-radius: 4px;
+  margin: 0 6px;
 }
 
 #navbar #logo {
@@ -42,7 +42,7 @@ body{
 
 #navbar-right {
   position: absolute;
-  right:5rem;
+  right:2rem;
 }
 
 @media screen and (max-width: 580px) {
@@ -53,6 +53,7 @@ body{
     float: none;
     display: block;
     text-align: left;
+    margin: 0;
   }
   #navbar-right {
     position: static;
