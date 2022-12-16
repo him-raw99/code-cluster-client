@@ -6,13 +6,13 @@ function Navbar() {
     return (
         <>
             <div id="navbar">
-                <a href="#default" id="logo">CompanyLogo</a>
+                <a href="#default" id="logo">Code Cluster</a>
                 <div id="navbar-right">
                     <a>
-                    <Button sx={{padding:"6px 15px"}} >Homepage</Button>
+                    <Button sx={{padding:"6px 15px",fontWeight:"4px",letterSpacing:"1px",color:"white"}} variant="outline" >Homepage</Button>
                     </a>
                     <a>
-                    <Button sx={{padding:"6px 15px"}} >Search User</Button>
+                    <Button sx={{padding:"6px 15px",fontWeight:"4px",letterSpacing:"1px",color:"white"}} variant="outline" >Search User</Button>
                     </a>
                     <a>
                     <Button sx={{padding:"6px 15px"}} color="primary" variant='contained' endIcon={<LoginIcon/>}>Login</Button>
