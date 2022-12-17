@@ -63,7 +63,7 @@ body{
 }
 
 .banner {
-  background: linear-gradient(270deg, #27affe, #24bbe5, #bb35f9);
+  background: linear-gradient(270deg, #27affe, #27c0db, #bb35f9);
   background-size: 600% 600%;
   height: 90vh;
   -webkit-animation: AnimationName 23s ease infinite;
