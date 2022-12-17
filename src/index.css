@@ -121,21 +121,51 @@ body{
   right: 6%;
 }
 
-.scroll-fix{
-  padding: 0;
-  margin: 0;
-}
 
 .banner__button1{
   position: relative;
   top:2rem;
-  left: 5.5rem;
-  transform: scale(1.5);
+  left: 4.5rem;
+  transform: scale(1.30);
 
 }
 .banner__button2{
   position: relative;
   top:2rem;
-  left: 12rem;
-  transform: scale(1.5);
+  left: 10rem;
+  transform: scale(1.30);
 }
+
+
+.text-centered{
+  text-align: center;
+  padding: 8%;
+  background-color: white;
+  position: relative;
+  z-index: 1;
+}
+.text-centered h3{
+  font-size: 2rem;
+  font-weight: 700;
+  color: rgb(46, 46, 46);
+}
+.text-centered p{
+  color: #848484;
+  font-weight: 400;
+  
+}
+.text-centered i{
+  font-size: 4.5rem;
+  color: #9c9cfc;
+}
+.text-centered i:hover{
+  color: #c981f3;
+}
+
+
+
+.scroll-fix{
+  padding: 0;
+  margin: 0;
+}
+

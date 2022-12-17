@@ -9,7 +9,7 @@ function Banner() {
         <div className="banner row scroll-fix">
             <div className="col-lg-5 col-md-12 scroll-fix">
                 <h1 className='banner__heading'>Dont know how to use github but want to host your code</h1>
-                <Button variant='contained' color='inherit' className="banner__button1" endIcon={<SearchIcon/>}>Search User</Button>
+                <Button variant='contained' sx={{backgroundColor:"white"}} color='inherit' className="banner__button1" endIcon={<SearchIcon/>}>Search User</Button>
                 <Button variant='contained' className="banner__button2" endIcon={<LoginIcon/>}>Login / signup</Button>
             </div>
             <div className="col-lg-7 col-md-12 scroll-fix">
