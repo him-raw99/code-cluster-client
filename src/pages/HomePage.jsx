@@ -1,7 +1,7 @@
 import React from 'react'
-import Banner from '../components/homePageComponents/Banner'
-import Features from '../components/homePageComponents/Features'
-import Navbar from '../components/homePageComponents/Navbar'
+import Banner from '../components/HomePageComponents/Banner'
+import Features from '../components/HomePageComponents/Features'
+import Navbar from '../components/HomePageComponents/Navbar'
 
 function HomePage() {
   return (
