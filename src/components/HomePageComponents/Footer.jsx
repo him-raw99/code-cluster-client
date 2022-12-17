@@ -1,17 +1,17 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom';
 const year = new Date().getFullYear();
-console.log(year);
 function Footer() {
     return (
         <>
             <div className="container">
                 <footer className="py-1 my-3">
                     <ul className="nav justify-content-center border-bottom pb-3 mb-3">
-                        <li className="nav-item"><a href="#" className="nav-link px-5 text-muted">Home</a></li>
-                        <li className="nav-item"><a href="#" className="nav-link px-5 text-muted">Login</a></li>
-                        <li className="nav-item"><a href="#" className="nav-link px-5 text-muted">SignUp</a></li>
-                        <li className="nav-item"><a href="#" className="nav-link px-5 text-muted">Search User</a></li>
-                        <li className="nav-item"><a href="#" className="nav-link px-5 text-muted">Contact</a></li>
+                        <li className="nav-item"><NavLink className="nav-link px-5 text-muted" to={"/"}>Home</NavLink></li>
+                        <li className="nav-item"><NavLink className="nav-link px-5 text-muted" to={"/login"}>Login</NavLink></li>
+                        <li className="nav-item"><NavLink className="nav-link px-5 text-muted" to={"/login"}>SignUp</NavLink></li>
+                        <li className="nav-item"><NavLink className="nav-link px-5 text-muted" to={"/search"}>Search User</NavLink></li>
+                        <li className="nav-item"><NavLink className="nav-link px-5 text-muted" to={"/contact"}>Contact</NavLink></li>
                     </ul>
                     <p className="text-center text-muted">© {year} Code Cluster</p>
                 </footer>

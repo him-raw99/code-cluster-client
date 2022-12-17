@@ -2,7 +2,7 @@ import React from 'react'
 
 function LoginForm() {
   return (
-    <div>LoginForm</div>
+    <div className='login__form'>LoginForm</div>
   )
 }
 
