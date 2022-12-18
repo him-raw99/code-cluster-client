@@ -240,7 +240,7 @@ a:hover{
 
   a #logo{
     font-size: 300%;
-    width: 100vw;
+    width: 100%;
   }
 
   #navbar{
@@ -250,7 +250,17 @@ a:hover{
 }
 
 @media screen and (max-width: 519px) {
+  .banner{
+    padding: 2px;
+  }
+  .banner__heading{
+    font-size: 2.8rem;
+  }
   div .container{
-    margin-right: 0;
+    width: 100%;
+    overflow-x: hidden;
+  }
+  #navbar{
+    top:14px
   }
 }
