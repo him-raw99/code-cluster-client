@@ -235,7 +235,7 @@ a:hover{
   }
 
   .banner{
-    height: 60vh;
+    height: 70vh;
   }
 
   a #logo{
@@ -252,6 +252,5 @@ a:hover{
 @media screen and (max-width: 519px) {
   div .container{
     margin-right: 0;
-    margin-left: 0;
   }
 }
