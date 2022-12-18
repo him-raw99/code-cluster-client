@@ -210,7 +210,7 @@ a:hover{
 
 @media screen and (max-width: 794px) {
   .login__form{
-    width: 60%;
+    width: 82%;
     margin-bottom: 30vh;
   }
 }
@@ -222,19 +222,36 @@ a:hover{
     display: none;
   }
   .banner__button1{
-    transform: scale(1.2);
-    left:14%;
+    transform: scale(1);
+    left:10%;
   }
   .banner__button2{
-    transform: scale(1.2);
-    left: 24%;
+    transform: scale(1);
+    left: 14%;
   }
-  a #logo{
-    transform: scale(0.95);
-    margin:0;
+  #navbar #logo{
+    font-size: 3rem;
+    margin-left: 0;
   }
 
-  #logo{
+  .banner{
+    height: 60vh;
+  }
+
+  a #logo{
     font-size: 300%;
+    width: 100vw;
+  }
+
+  #navbar{
+    width:100vw;
+  }
+
+}
+
+@media screen and (max-width: 519px) {
+  div .container{
+    margin-right: 0;
+    margin-left: 0;
   }
 }

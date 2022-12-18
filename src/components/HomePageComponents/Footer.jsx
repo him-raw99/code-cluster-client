@@ -4,9 +4,9 @@ const year = new Date().getFullYear();
 function Footer() {
     return (
         <>
-            <div className="container">
+            <div className="container" style={{width:"95vw",overflowX:"hidden"}}>
                 <footer className="py-1 my-3">
-                    <ul className="nav justify-content-center border-bottom pb-3 mb-3">
+                    <ul className="nav justify-content-center border-bottom pb-3 mb-3 scroll-fix">
                         <li className="nav-item"><NavLink className="nav-link px-4 text-muted" to={"/"}>Home</NavLink></li>
                         <li className="nav-item"><NavLink className="nav-link px-4 text-muted" to={"/login"}>Login</NavLink></li>
                         <li className="nav-item"><NavLink className="nav-link px-4 text-muted" to={"/login"}>SignUp</NavLink></li>
