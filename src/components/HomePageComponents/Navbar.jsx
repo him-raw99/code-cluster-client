@@ -9,10 +9,10 @@ function Navbar() {
                 <NavLink to={"/"} ><a href="#default" id="logo">Code Cluster</a></NavLink>
                 <div id="navbar-right">
                     <NavLink to={"/"} >
-                        <Button sx={{ padding: "6px 15px", fontWeight: "4px", letterSpacing: "1px", color: "white" }} variant="outline" >Homepage</Button>
+                        <Button sx={{ padding: "6px 15px", fontWeight: "500", letterSpacing: "1px", color: "white" }} variant="outline" >Homepage</Button>
                     </NavLink>
                     <NavLink to={"/search"}>
-                        <Button sx={{ padding: "6px 15px", fontWeight: "4px", letterSpacing: "1px", color: "white" }} variant="outline" >Search User</Button>
+                        <Button sx={{ padding: "6px 15px", fontWeight: "500", letterSpacing: "1px", color: "white" }} variant="outline" >Search User</Button>
                     </NavLink>
                     <NavLink to={"/login"}>
                         <Button sx={{ padding: "6px 15px" }} color="primary" variant='contained' endIcon={<LoginIcon />}>Login</Button>
