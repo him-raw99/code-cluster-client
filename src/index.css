@@ -260,7 +260,9 @@ a:hover{
     width: 100%;
     overflow-x: hidden;
   }
-  #navbar{
-    top:14px
-  }
+}
+
+.row{
+  max-width: 100vw;
+  overflow: hidden;
 }

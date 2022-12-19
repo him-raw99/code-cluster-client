@@ -4,7 +4,7 @@ function Features() {
   return (
     <>
         <section id="features">
-      <div className="row scroll-fix">
+      <div className="row">
         <div className="col-lg-4 text-centered " data-aos="zoom-in-right" data-aos-duration="1200">
           <i className="bi bi-check-circle-fill"></i>
           <h3>Easy to use.</h3>
