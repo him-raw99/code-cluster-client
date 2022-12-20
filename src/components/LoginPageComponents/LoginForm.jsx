@@ -9,7 +9,7 @@ function LoginForm(props) {
 
   function handelChange(event){
     const {name,value}=event.target;
-    setUserData(prevVal=>({...userData,[name]:value}));
+    setUserData(prevVal=>({...prevVal,[name]:value}));
   }
   
   function handelSubmit(){

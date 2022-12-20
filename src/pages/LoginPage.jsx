@@ -10,7 +10,7 @@ function LoginPage() {
     <>
       <div className="login__body">
       <Navbar/>
-      {!newUser?<LoginForm setNewUser={setNewUser} />:<SignUpForm/>}
+      {!newUser?<LoginForm setNewUser={setNewUser} />:<SignUpForm setNewUser={setNewUser} />}
       <Footer/>
       </div>
     </>
