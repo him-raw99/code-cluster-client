@@ -6,7 +6,7 @@ function Navbar() {
     return (
         <>
             <div id="navbar">
-                <NavLink to={"/"} ><a href="#default" id="logo">Code Cluster</a></NavLink>
+                <NavLink to={"/"} id="logo">Code Cluster</NavLink>
                 <div id="navbar-right">
                     <NavLink to={"/"} >
                         <Button sx={{ padding: "6px 15px", fontWeight: "500", letterSpacing: "1px", color: "white" }} variant="outline" >Homepage</Button>
