@@ -1,5 +1,5 @@
 import axios from "axios";
-const URL = import.meta.env.VITE_API;
+const URL = "https://code-cluster-api.onrender.com/%22";
 const API = axios.create({
     baseURL: URL
 });
