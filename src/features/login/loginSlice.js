@@ -13,7 +13,7 @@ const loginSlice = createSlice({
       state.isLoading = true;
       console.log(import.meta.env.VITE_API);
       axios
-        .get(import.meta.env.VITE_API)
+        .get("/")
         .then((res) => {
           console.log(res);
         })
