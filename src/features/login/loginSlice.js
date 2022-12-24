@@ -18,7 +18,7 @@ const loginSlice = createSlice({
           console.log(res);
         })
         .catch((err) => {
-          console.log(err);
+          console.log("some error "+err);
         });
     },
   },
