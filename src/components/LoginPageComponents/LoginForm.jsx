@@ -1,40 +1,76 @@
-import React from 'react'
-import { Button, TextField } from '@mui/material'
-import FormGroup from '@mui/material/FormGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import { useState } from 'react'
+import React from "react";
+import { Button, TextField } from "@mui/material";
+import Checkbox from "@mui/material/Checkbox";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { submitDetails } from "../../features/login/loginSlice";
+
 function LoginForm(props) {
+  const dispatch = useDispatch();
+
   const [userData, setUserData] = useState({
     username: "",
-    password: ""
+    password: "",
   });
+
   const [seePassword, setSeePassword] = useState(false);
 
   function handelChange(event) {
     const { name, value } = event.target;
-    setUserData(prevVal => ({ ...prevVal, [name]: value }));
-  }
-
-  function handelSubmit() {
-    console.log(userData);
+    setUserData((prevVal) => ({ ...prevVal, [name]: value }));
   }
 
   function handelNewUser() {
-  props.setNewUser(true);
+    props.setNewUser(true);
   }
+
   function handelShowPassword() {
-    setSeePassword(prevVal=>!prevVal)
+    setSeePassword((prevVal) => !prevVal);
   }
+
   return (
-    <div className='login__form'>
-      <TextField onChange={handelChange} name="username" className='login-form-inputs' label="Username" variant="outlined" margin='normal' fullWidth sx={{ backgroundColor: "rgba(239, 239, 239, 0.461)" }} />
-      <TextField onChange={handelChange} name="password" className='login-form-inputs' label="Password" type={seePassword?"text":"password"} variant="outlined" margin='normal' fullWidth sx={{ backgroundColor: "rgba(239, 239, 239, 0.461)" }} />
-      <div className="see-password"><Checkbox onClick={handelShowPassword} /> Show password</div>
-      <Button onClick={handelSubmit} variant='contained' color='success' sx={{ marginTop: "5%" }} fullWidth>login</Button>
-      <p className='signup__button'>not registered with us? <Button onClick={handelNewUser} >SignUp Now</Button> </p>
+    <div className="login__form">
+      <TextField
+        onChange={handelChange}
+        name="username"
+        className="login-form-inputs"
+        label="Username"
+        variant="outlined"
+        margin="normal"
+        fullWidth
+        sx={{ backgroundColor: "rgba(239, 239, 239, 0.461)" }}
+      />
+      <TextField
+        onChange={handelChange}
+        name="password"
+        className="login-form-inputs"
+        label="Password"
+        type={seePassword ? "text" : "password"}
+        variant="outlined"
+        margin="normal"
+        fullWidth
+        sx={{ backgroundColor: "rgba(239, 239, 239, 0.461)" }}
+      />
+      <div className="see-password">
+        <Checkbox onClick={handelShowPassword} /> Show password
+      </div>
+      <Button
+        onClick={() => {
+          dispatch(submitDetails(userData));
+        }}
+        variant="contained"
+        color="success"
+        sx={{ marginTop: "5%" }}
+        fullWidth
+      >
+        login
+      </Button>
+      <p className="signup__button">
+        not registered with us?{" "}
+        <Button onClick={handelNewUser}>SignUp Now</Button>{" "}
+      </p>
     </div>
-  )
+  );
 }
 
-export default LoginForm
+export default LoginForm;

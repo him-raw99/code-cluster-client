@@ -1,15 +1,15 @@
-body{
-  margin:0;
-  padding:0;
+body {
+  margin: 0;
+  padding: 0;
   overflow-x: hidden;
 }
 
-a{
+a {
   text-decoration: none;
   color: inherit;
 }
 
-a:hover{
+a:hover {
   color: inherit;
 }
 
@@ -28,7 +28,7 @@ a:hover{
   color: black;
   text-align: center;
   text-decoration: none;
-  font-size: 18px; 
+  font-size: 18px;
   line-height: 35px;
   border-radius: 4px;
   margin: 0 6px;
@@ -48,7 +48,7 @@ a:hover{
 
 #navbar-right {
   position: absolute;
-  right:2rem;
+  right: 2rem;
 }
 
 .banner {
@@ -61,31 +61,49 @@ a:hover{
 }
 
 @-webkit-keyframes AnimationName {
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 @-moz-keyframes AnimationName {
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 @keyframes AnimationName {
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
-.banner__heading{
+.banner__heading {
   color: white;
   margin: 0;
-  padding: 33%  9% 0 10% ;
+  padding: 33% 9% 0 10%;
   font-size: 300%;
   font-weight: 500;
   margin-bottom: 4%;
 }
 
-.banner__image1{
+.banner__image1 {
   padding: 2px;
   background: rgba(255, 255, 255, 0.07);
   border-radius: 16px;
@@ -95,13 +113,13 @@ a:hover{
   border: 1px solid rgba(255, 255, 255, 0.19);
   height: 40%;
   position: relative;
-  top: 19% ;
+  top: 19%;
   margin: 0;
   left: 6%;
   width: 43%;
   height: 39%;
 }
-.banner__image2{
+.banner__image2 {
   margin: 0;
   width: 50%;
   height: 50%;
@@ -114,68 +132,66 @@ a:hover{
   border: 1px solid rgba(255, 255, 255, 0.19);
   height: 48%;
   position: relative;
-  top: 45% ;
+  top: 45%;
   right: 6%;
 }
 
-.banner{
+.banner {
   overflow-x: hidden;
-
 }
 
-.banner__button1{
+.banner__button1 {
   position: relative;
-  top:6%;
+  top: 6%;
   left: 15%;
   transform: scale(1.3);
-
 }
-.banner__button2{
+.banner__button2 {
   position: relative;
-  top:6%;
+  top: 6%;
   left: 30%;
   transform: scale(1.3);
 }
 
-
-.text-centered{
+.text-centered {
   text-align: center;
   padding: 8%;
   background-color: white;
   position: relative;
   z-index: 1;
 }
-.text-centered h3{
+.text-centered h3 {
   font-size: 2rem;
   font-weight: 700;
   color: rgb(46, 46, 46);
 }
-.text-centered p{
+.text-centered p {
   color: #848484;
   font-weight: 400;
-  
 }
-.text-centered i{
+.text-centered i {
   font-size: 4.5rem;
   color: #9c9cfc;
 }
-.text-centered i:hover{
+.text-centered i:hover {
   color: #c981f3;
 }
 
-
-
-.scroll-fix{
+.scroll-fix {
   padding: 0;
   margin: 0;
 }
 
-.login__body{
-  background: rgb(255,255,255);
-  background: linear-gradient(0deg, rgba(255,255,255,1) 8%, rgb(19, 174, 236) 100%);
+.login__body {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 1) 8%,
+    rgb(19, 174, 236) 100%
+  );
 }
 
-.login__form{
+.login__form {
   margin-left: auto;
   margin-right: auto;
   padding: 3% 5%;
@@ -187,11 +203,10 @@ a:hover{
   border-radius: 12px;
 }
 
-.signup__button{
+.signup__button {
   text-align: center;
   margin-top: 8%;
 }
-
 
 @media screen and (max-width: 580px) {
   #navbar {
@@ -206,68 +221,76 @@ a:hover{
   #navbar-right {
     position: static;
   }
+  .banner__heading {
+    padding: 33% 9% 0 10%;
+  }
 }
 
 @media screen and (max-width: 794px) {
-  .login__form{
+  .login__form {
     width: 82%;
     margin-bottom: 30vh;
   }
 }
 @media screen and (max-width: 991px) {
-  .onSmallHide{
+  .onSmallHide {
     display: none;
   }
-  #navbar-right{
+  #navbar-right {
     display: none;
   }
-  .banner__button1{
+  .banner__button1 {
     transform: scale(1);
-    left:10%;
+    left: 10%;
   }
-  .banner__button2{
+  .banner__button2 {
     transform: scale(1);
     left: 14%;
   }
-  #navbar #logo{
+  #navbar #logo {
     font-size: 3rem;
     margin-left: 0;
+    width: 100%;
+    text-align: center;
   }
 
-  .banner{
+  .banner__heading {
+    padding: 25% 5% 6% 5%;
+  }
+
+  .banner {
     height: 70vh;
   }
 
-  a #logo{
+  a #logo {
     font-size: 300%;
     width: 100%;
   }
 
-  #navbar{
-    width:100vw;
+  #navbar {
+    width: 100vw;
   }
-
 }
 
 @media screen and (max-width: 519px) {
-  .banner{
+  .banner {
     padding: 2px;
   }
-  .banner__heading{
+  .banner__heading {
     font-size: 2.8rem;
   }
-  div .container{
+  div .container {
     width: 100%;
     overflow-x: hidden;
   }
 }
 
-.row{
+.row {
   max-width: 100vw;
   overflow: hidden;
 }
 
-.see-password{
+.see-password {
   position: relative;
   right: 10px;
   font-size: 16px;
