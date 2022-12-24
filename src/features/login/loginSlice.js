@@ -11,7 +11,15 @@ const loginSlice = createSlice({
   reducers: {
     submitDetails: (state, action) => {
       state.isLoading = true;
-      axios.get(import.meta.env.VITE_API).then((res)=>{console.log(res)});
+      console.log(import.meta.env.VITE_API);
+      axios
+        .get(import.meta.env.VITE_API)
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     },
   },
 });
