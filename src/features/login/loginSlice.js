@@ -1,8 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
-
+import axios from "axios";
 const initialState = {
-  username: "",
-  password: "",
+  token: "",
   isLoading: false,
 };
 
@@ -11,14 +10,11 @@ const loginSlice = createSlice({
   initialState,
   reducers: {
     submitDetails: (state, action) => {
-      state.username = action.payload.username;
-      state.password = action.payload.password;
       state.isLoading = true;
+      axios.get(import.meta.env.VITE_API).then((res)=>{console.log(res)});
     },
   },
 });
-
-console.log(loginSlice);
 
 export const { submitDetails } = loginSlice.actions;
 export default loginSlice.reducer;
