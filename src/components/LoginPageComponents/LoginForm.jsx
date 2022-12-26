@@ -3,7 +3,7 @@ import { Button, TextField } from "@mui/material";
 import Checkbox from "@mui/material/Checkbox";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { submitDetails } from "../../features/login/loginSlice";
+import { login, sendLoginData} from "../../features/auth/authSlice";
 
 function LoginForm(props) {
   const dispatch = useDispatch();
@@ -56,7 +56,7 @@ function LoginForm(props) {
       </div>
       <Button
         onClick={() => {
-          dispatch(submitDetails(userData));
+          dispatch(sendLoginData(userData));
         }}
         variant="contained"
         color="success"
