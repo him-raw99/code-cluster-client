@@ -4,6 +4,7 @@ const url = "https://code-cluster-api.onrender.com";
 
 const initialState = {
   token: "",
+  message:"",
   isLogin: false,
   isLoading: false,
 };
@@ -38,11 +39,12 @@ const authSlice = createSlice({
       if (action.payload.isLogin) {
         state.token = action.payload.token;
       }
+      state.message = action.payload.message;
       console.log(action);
     },
     [sendLoginData.rejected]: (state) => {
       state.isLoading = false;
-      console.log("failed");
+      console.log("------------ some error occured -------------")
     },
   },
 });

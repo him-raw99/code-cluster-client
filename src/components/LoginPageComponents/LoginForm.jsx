@@ -3,7 +3,7 @@ import { Button, TextField } from "@mui/material";
 import Checkbox from "@mui/material/Checkbox";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { login, sendLoginData} from "../../features/auth/authSlice";
+import { sendLoginData} from "../../features/auth/authSlice";
 
 function LoginForm(props) {
   const dispatch = useDispatch();
