@@ -297,18 +297,3 @@ a:hover {
   color: #656565;
 }
 
-.loading_modal{
-  background-color: rgba(255, 255, 255, 0.655);
-  backdrop-filter: blur(2px);
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  padding: 4%;
-  z-index: 2;
-  text-align: center;
-}
-
-.loader{
-  transform: scale(1.5);
-}
