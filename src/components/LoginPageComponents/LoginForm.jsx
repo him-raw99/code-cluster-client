@@ -4,6 +4,7 @@ import Checkbox from "@mui/material/Checkbox";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { sendLoginData} from "../../features/auth/authSlice";
+import "./LoginForm.css"
 
 function LoginForm(props) {
   const dispatch = useDispatch();

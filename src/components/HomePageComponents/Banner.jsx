@@ -3,7 +3,7 @@ import React from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import LoginIcon from "@mui/icons-material/Login";
 import { NavLink } from "react-router-dom";
-
+import "./Banner.css"
 function Banner() {
   return (
     <>

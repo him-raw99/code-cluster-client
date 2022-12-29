@@ -2,6 +2,7 @@ import { Button } from "@mui/material";
 import LoginIcon from "@mui/icons-material/Login";
 import React from "react";
 import { NavLink } from "react-router-dom";
+import "./Navbar.css"
 function Navbar() {
   return (
     <>
