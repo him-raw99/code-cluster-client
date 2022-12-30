@@ -3,6 +3,10 @@ import Footer from "../components/HomePageComponents/Footer";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import CardContainer from "../components/DashboardComponents/CardContainer";
+import AssistBall from "../components/DashboardComponents/AssistBall";
+import DashboardNavbar from "../components/DashboardComponents/DashboardNavbar";
+
 
 function Dashboard() {
   const navigate = useNavigate();
@@ -12,9 +16,13 @@ function Dashboard() {
       navigate("/login");
     }
   }, [user]);
+
+
   return (
     <>
-      <h1>Welcome</h1>
+      <DashboardNavbar/>
+      <CardContainer/>
+      <AssistBall/>
       <Footer />
     </>
   );
