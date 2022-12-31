@@ -54,7 +54,7 @@ function DashboardNavbar() {
               textDecoration: 'none',
             }}
           >
-            WELCOME
+            DASHBOARD
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>

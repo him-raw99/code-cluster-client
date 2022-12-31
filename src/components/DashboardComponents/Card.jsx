@@ -9,8 +9,9 @@ import CardHeader from "@mui/material/CardHeader";
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
+import "./Card.css"
 
-export default function MediaCard() {
+export default function MediaCard(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -19,7 +20,7 @@ export default function MediaCard() {
   const handleClose = () => {
     setAnchorEl(null);
   };
-
+  
   return (
     <Card sx={{ maxWidth: 340 , display:"inline-block" , margin:"4%"}}>
       <CardHeader
@@ -28,8 +29,8 @@ export default function MediaCard() {
             <MoreVertIcon />
           </IconButton>
         }
-        title="Shrimp and "
-        subheader="September 14, 2016"
+        title={props.title}
+        subheader={props.date}
       />
 
       <Menu
@@ -46,8 +47,9 @@ export default function MediaCard() {
 
       <CardContent>
         <Typography variant="body1" color="text.secondary">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
+          <div className="newLine">
+          {props.code}
+          </div>
         </Typography>
       </CardContent>
 
