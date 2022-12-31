@@ -9,7 +9,7 @@ import CardHeader from "@mui/material/CardHeader";
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-import "./Card.css"
+import "./Card.css";
 
 export default function MediaCard(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -20,9 +20,9 @@ export default function MediaCard(props) {
   const handleClose = () => {
     setAnchorEl(null);
   };
-  
+
   return (
-    <Card sx={{ maxWidth: 340 , display:"inline-block" , margin:"4%"}}>
+    <Card sx={{ maxWidth: 340, display: "inline-block", margin: "4%" }}>
       <CardHeader
         action={
           <IconButton aria-label="settings" onClick={handleClick}>
@@ -46,10 +46,8 @@ export default function MediaCard(props) {
       </Menu>
 
       <CardContent>
-        <Typography variant="body1" color="text.secondary">
-          <div className="newLine">
+        <Typography variant="body1" color="text.secondary" className="newLine">
           {props.code}
-          </div>
         </Typography>
       </CardContent>
 

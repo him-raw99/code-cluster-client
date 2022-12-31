@@ -1,9 +1,12 @@
 import React from "react";
 import { Button, TextField } from "@mui/material";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { sendSignupData } from "../../features/auth/authSlice";
+
 function LoginForm(props) {
   const [err, setErr] = useState(false);
-
+  const dispatch = useDispatch();
   const [userData, setUserData] = useState({
     username: "",
     password: "",
@@ -18,7 +21,7 @@ function LoginForm(props) {
 
   function handelSubmit() {
     if (userData.password === userData.confirmPassword) {
-      console.log(userData);
+      dispatch(sendSignupData(userData))
       setErr(false);
     } else {
       setErr(true);
