@@ -21,7 +21,8 @@ function LoginForm(props) {
 
   function handelSubmit() {
     if (userData.password === userData.confirmPassword) {
-      dispatch(sendSignupData(userData))
+      // dispatch(sendSignupData(userData))
+      console.log(userData);
       setErr(false);
     } else {
       setErr(true);
