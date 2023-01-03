@@ -3,6 +3,7 @@ import { Button, TextField } from "@mui/material";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { sendSignupData } from "../../features/auth/authSlice";
+import "./LoginForm.css"
 
 function LoginForm(props) {
   const [err, setErr] = useState(false);
@@ -34,6 +35,12 @@ function LoginForm(props) {
   }
   return (
     <div className="login__form">
+    <div className="login__form__heading">
+        SIGN UP
+      </div>
+      <p className="login__form__subheading">
+        Signup to create your local code-space
+      </p>
       <TextField
         onChange={handelChange}
         name="name"

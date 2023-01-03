@@ -31,6 +31,12 @@ function LoginForm(props) {
 
   return (
     <div className="login__form">
+      <div className="login__form__heading">
+        LOGIN
+      </div>
+      <p className="login__form__subheading">
+        Use your credentials to login
+      </p>
       <TextField
         onChange={handelChange}
         name="username"
