@@ -12,7 +12,7 @@ function LoginForm(props) {
     username: "",
     password: "",
     confirmPassword: "",
-    name: "",
+    email: "",
   });
 
   function handelChange(event) {
@@ -43,9 +43,9 @@ function LoginForm(props) {
       </p>
       <TextField
         onChange={handelChange}
-        name="name"
+        name="username"
         className="login-form-inputs"
-        label="Name"
+        label="Username"
         variant="outlined"
         margin="normal"
         fullWidth
@@ -53,9 +53,9 @@ function LoginForm(props) {
       />
       <TextField
         onChange={handelChange}
-        name="username"
+        name="email"
         className="login-form-inputs"
-        label="Username"
+        label="Email"
         variant="outlined"
         margin="normal"
         fullWidth

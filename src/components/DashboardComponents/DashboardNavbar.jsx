@@ -95,7 +95,6 @@ function DashboardNavbar() {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Typography
             variant="h5"
             noWrap
@@ -107,12 +106,12 @@ function DashboardNavbar() {
               flexGrow: 1,
               fontFamily: 'monospace',
               fontWeight: 700,
-              letterSpacing: '.3rem',
+              letterSpacing: '.1rem',
               color: 'inherit',
               textDecoration: 'none',
             }}
           >
-            LOGO
+            DASHBOARD
           </Typography>
           <Box justifyContent={"right"} sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' , marginLeft:"auto" , marginRight:"auto" } }}>
             {pages.map((page) => (
@@ -128,7 +127,7 @@ function DashboardNavbar() {
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 , mx:4 }}>
+              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 , mx:2 }}>
                 <Avatar alt="Remy Sharp" />
               </IconButton>
             </Tooltip>

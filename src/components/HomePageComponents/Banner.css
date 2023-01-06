@@ -1,7 +1,7 @@
 .banner__heading {
   color: white;
   margin: 0;
-  padding: 28% 9% 0 10%;
+  padding: 33% 0 4rem 4rem;
   font-size: 300%;
   font-weight: 500;
   margin-bottom: 4%;
@@ -17,9 +17,9 @@
   border: 1px solid rgba(255, 255, 255, 0.19);
   height: 40%;
   position: relative;
-  top: 19%;
+  top: 22%;
   margin: 0;
-  left: 6%;
+  left: 11%;
   width: 43%;
   height: 39%;
 }
@@ -37,30 +37,26 @@
   height: 48%;
   position: relative;
   top: 45%;
-  right: 6%;
-}
-
-.banner {
-  overflow-x: hidden;
+  right: 2%;
 }
 
 .banner__button1 {
   position: relative;
-  top: 6%;
+  top: 1%;
   left: 15%;
-  transform: scale(1.3);
+  transform: scale(1.2);
 }
 .banner__button2 {
   position: relative;
-  top: 6%;
+  top: 1%;
   left: 30%;
-  transform: scale(1.3);
+  transform: scale(1.2);
 }
 
 .banner {
   background: linear-gradient(270deg, #27affe, #27c0db, #bb35f9);
   background-size: 600% 600%;
-  height: 90vh;
+  height: 34rem;
   -webkit-animation: AnimationName 23s ease infinite;
   -moz-animation: AnimationName 23s ease infinite;
   animation: AnimationName 23s ease infinite;
@@ -144,29 +140,88 @@
 
   .banner__button1 {
     transform: scale(1);
-    left: 10%;
+    left: 7rem;
   }
   .banner__button2 {
     transform: scale(1);
-    left: 14%;
+    left: 14rem;
   }
 
   .banner__heading {
-    padding: 15% 5% 2% 5%;
+    padding: 10rem 7rem 3rem 7rem ;
     margin-bottom: 0;
   }
 
   .banner {
-    height: 70vh;
+    height: 30rem;
+  }
+}
+
+@media screen and (max-width: 663px) {
+  .banner__heading {
+    padding: 10rem 4rem 2rem 4rem ;
+  }
+  .banner__button2 {
+    transform: scale(1);
+    left: 6rem;
+  }
+  .banner__button1 {
+    transform: scale(1);
+    left: 4rem;
+  }
+}
+
+@media screen and (max-width: 451px) {
+  .banner__heading {
+    padding: 8rem 2rem 2rem 2rem ;
+  }
+  .banner__button1 {
+    left: 3rem;
+  }
+  .banner__button2 {
+    left: 4rem;
+  }
+}
+@media screen and (max-width: 394px) {
+  .banner__heading {
+    padding: 7.3rem 1rem 2rem 2rem ;
+    font-size: 2.2rem;
+  }
+  .banner__button1 {
+    transform: scale(0.91);
+    left: 2rem;
+  }
+  .banner__button2 {
+    transform: scale(0.91);
+    left: 3rem;
+  }
+
+  .banner {
+    height: 24rem;
   }
 }
 
 @media screen and (max-width: 360px) {
-    .banner__heading {
-      font-size: 2.4rem;
-      padding: 25% 5% 2% 5%;
-    }
-    .banner{
-        height: 60vh;
-    }
+  .banner__button1 {
+    left: 1rem;
   }
+  .banner__button2 {
+    left: 1.2rem;
+  }
+}
+
+
+@media screen and (max-width: 332px) {
+  .banner__heading {
+    font-size: 2rem;
+  }
+  .banner__button1 {
+    transform: scale(0.71);
+    left: 0.7rem;
+  }
+  .banner__button2 {
+    transform: scale(0.71);
+    left: 9rem;
+    top:-2.1rem;
+  }
+}
