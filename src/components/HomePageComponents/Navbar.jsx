@@ -13,8 +13,8 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={scroll > 50 ? "navbar shrink" : "navbar"}>
-      <NavLink to={"/"} className={scroll > 50 ? "logo shrink-logo" : "logo"}>
+    <nav className={scroll > 30 ? "navbar shrink" : "navbar"}>
+      <NavLink to={"/"} className={scroll > 30 ? "logo shrink-logo" : "logo"}>
         Code Cluster
       </NavLink>
       <div className="navbar-right">

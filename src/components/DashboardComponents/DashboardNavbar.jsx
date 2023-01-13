@@ -7,11 +7,10 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
+import SettingsIcon from '@mui/icons-material/Settings';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
 import { useDispatch } from 'react-redux';
 import { logout } from '../../features/auth/authSlice';
 
@@ -38,7 +37,7 @@ function DashboardNavbar() {
   };
 
   return (
-    <AppBar position="static" color='secondary' sx={{padding:"4px"}}>
+    <AppBar position="static" sx={{padding:"14px",backgroundColor:"#A31ACB"}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -128,8 +127,8 @@ function DashboardNavbar() {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 , mx:2 }}>
-                <Avatar alt="Remy Sharp" />
-              </IconButton>
+                <SettingsIcon fontSize='large' sx={{color:"white"}} />
+              </IconButton> 
             </Tooltip>
             <Menu
               sx={{ mt: '45px' }}
