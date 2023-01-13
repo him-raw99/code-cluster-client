@@ -17,7 +17,7 @@ export const sendLoginData = createAsyncThunk(
     try {
       const res = await authServices.login(userData);
       return res.data;
-    } catch (error) {
+    } catch (err) {
       console.log(err);
     }
   }
@@ -49,7 +49,7 @@ const authSlice = createSlice({
   extraReducers: {
     [sendLoginData.pending]: (state) => {
       state.isLoading = true;
-      console.log("pending.....");
+      console.log("pending-login.....");
     },
 
     [sendLoginData.fulfilled]: (state, action) => {
@@ -61,16 +61,16 @@ const authSlice = createSlice({
       }
 
       state.message = action.payload.message;
-      console.log("done✌️");
+      console.log("done✌️-login");
     },
 
     [sendLoginData.rejected]: (state) => {
       state.isLoading = false;
-      console.log("------------ some error occured -------------");
+      console.log("------------ some error occured while login -------------");
     },
     [sendSignupData.pending]: (state) => {
       state.isLoading = true;
-      console.log("pending.....");
+      console.log("pending-signup.....");
     },
 
     [sendSignupData.fulfilled]: (state, action) => {
@@ -82,12 +82,12 @@ const authSlice = createSlice({
       }
 
       state.message = action.payload.message;
-      console.log("done✌️");
+      console.log("done✌️-signup");
     },
 
     [sendSignupData.rejected]: (state) => {
       state.isLoading = false;
-      console.log("------------ some error occured -------------");
+      console.log("------------ some error occured while signing up -------------");
     },
   },
 });
