@@ -53,8 +53,12 @@
 .card-button {
   background-color: rgba(201, 27, 245, 0.9) !important;
   margin-top: 5% !important ;
-  margin-left: 5% !important ;
+  margin-left: 6% !important ;
 }
 .card-button:hover {
   background-color: rgba(85, 13, 137, 0.9) !important;
+}
+
+.col-sm-6{
+  padding: 0 0 0 1.2rem;
 }

@@ -63,7 +63,7 @@ export default function MediaCard(props) {
             color="secondary"
             size="small"
           >
-            make private
+            make {props.isPublic ? "Private" : "Public"}
           </Button>
         </div>
       </div>

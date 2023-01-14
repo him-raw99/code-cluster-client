@@ -9,20 +9,11 @@ function CardContainer() {
   useEffect(()=>{
     dispatch(getCode(token));
   },[])
+  const codes = useSelector((state)=>state.dashboard.codes);
   return (
     <>
     <div className="row">
-      <Card title="Code Cluster" code={`lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 `} />
-      <Card title="Code Cluster" code={`lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 `} />
-      <Card title="Code Cluster" code={`lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 `} />
-      <Card title="Code Cluster" code={`lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 `} />
-      <Card title="Code Cluster" code={`lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 `} />
-      <Card title="Code Cluster" code={`lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 `} />
-      <Card title="Code Cluster" code={`lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 `} />
-      <Card title="Code Cluster" code={`lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 `} />
-      <Card title="Code Cluster" code={`lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 `} />
-      <Card title="Code Cluster" code={`lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 `} />
-      <Card title="Code Cluster" code={`lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 lorem50 `} />
+      {codes.map((code)=>{return(<Card title={code.title} code={code.code} id={code._id} isPublic={code.isPublic} />)})}
     </div>
     </>
   )
