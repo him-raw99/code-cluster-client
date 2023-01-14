@@ -1,11 +1,6 @@
 import * as React from "react";
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import Typography from "@mui/material/Typography";
-import { IconButton } from "@mui/material";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
-import CardHeader from "@mui/material/CardHeader";
+import { IconButton } from "@mui/material";
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
@@ -13,48 +8,65 @@ import "./Card.css";
 
 export default function MediaCard(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
-  const handleClick = (event) => {
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = (event) => {
     setAnchorEl(event.currentTarget);
+    setOpen(true);
   };
   const handleClose = () => {
     setAnchorEl(null);
+    setOpen(false);
   };
-
   return (
-    <Card sx={{ maxWidth: 340, display: "inline-block", margin: "4%" }}>
-      <CardHeader
-        action={
-          <IconButton aria-label="settings" onClick={handleClick}>
+    <div className="col-lg-3 col-md-4 col-sm-6">
+      <div className="card">
+        <div className="card-head">
+          <h1 className="card-heading">{props.title}</h1>
+          <IconButton
+            className="more-icon"
+            color="inherit"
+            aria-label="upload picture"
+            component="label"
+            onClick={handleOpen}
+          >
             <MoreVertIcon />
           </IconButton>
-        }
-        title={props.title}
-        subheader={props.date}
-      />
-
-      <Menu
-        id="demo-positioned-menu"
-        aria-labelledby="demo-positioned-button"
-        anchorEl={anchorEl}
-        open={open}
-        onClose={handleClose}
-      >
-        <MenuItem onClick={handleClose}>Edit</MenuItem>
-        <MenuItem onClick={handleClose}>Delete</MenuItem>
-        <MenuItem onClick={handleClose}>Make Private</MenuItem>
-      </Menu>
-
-      <CardContent>
-        <Typography variant="body1" color="text.secondary" className="newLine">
-          {props.code}
-        </Typography>
-      </CardContent>
-
-      <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">View full code</Button>
-      </CardActions>
-    </Card>
+          <Menu
+            id="basic-menu"
+            anchorEl={anchorEl}
+            open={open}
+            onClose={handleClose}
+            MenuListProps={{
+              "aria-labelledby": "basic-button",
+            }}
+          >
+            <MenuItem onClick={handleClose}>Share code</MenuItem>
+            <MenuItem onClick={handleClose}>Edit code</MenuItem>
+            <MenuItem onClick={handleClose}>Delete code</MenuItem>
+          </Menu>
+        </div>
+        <div className="card-body">
+          <p className="code newLine">{props.code}</p>
+        </div>
+        <div className="blur button-holder">
+          <Button
+            variant="contained"
+            className="card-button"
+            color="secondary"
+            size="small"
+          >
+            view code
+          </Button>
+          <Button
+            variant="contained"
+            className="card-button"
+            color="secondary"
+            size="small"
+          >
+            make private
+          </Button>
+        </div>
+      </div>
+    </div>
   );
 }

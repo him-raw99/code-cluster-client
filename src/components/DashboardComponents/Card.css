@@ -1,3 +1,60 @@
-.newLine{
-    white-space: pre-wrap;
+.newLine {
+  white-space: pre-wrap;
+}
+
+.card {
+  margin: 1rem;
+  border-radius: 12px;
+  height: 18rem;
+  overflow-y: hidden;
+}
+
+.card-head {
+  background-color: rgb(167, 47, 253);
+  border-radius: 8px 8px 0 0;
+  color: white;
+}
+
+.card-heading {
+  font-size: 2rem;
+  display: inline-block;
+  margin: 1rem;
+  margin-right: 2rem;
+}
+
+.more-icon {
+  position: absolute !important;
+  top: 1.1rem;
+  right: 0.4rem;
+}
+
+.code {
+  font-size: 1.1rem;
+  margin: 0.6rem;
+  margin-top: 0.2rem;
+  padding: 0;
+}
+
+.blur {
+  position: absolute;
+  bottom: 0;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    0deg,
+    rgba(220, 179, 255, 0.791),
+    rgba(0, 0, 0, 0) 100% 0%
+  );
+  width: 100%;
+  height: 4rem;
+  border-radius: 0 0 12px 12px;
+  backdrop-filter: blur(3px);
+}
+
+.card-button {
+  background-color: rgba(201, 27, 245, 0.9) !important;
+  margin-top: 5% !important ;
+  margin-left: 5% !important ;
+}
+.card-button:hover {
+  background-color: rgba(85, 13, 137, 0.9) !important;
 }

@@ -1,21 +1,21 @@
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
-import SettingsIcon from '@mui/icons-material/Settings';
-import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
-import { useDispatch } from 'react-redux';
-import { logout } from '../../features/auth/authSlice';
+import * as React from "react";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Toolbar from "@mui/material/Toolbar";
+import IconButton from "@mui/material/IconButton";
+import Typography from "@mui/material/Typography";
+import Menu from "@mui/material/Menu";
+import MenuIcon from "@mui/icons-material/Menu";
+import Container from "@mui/material/Container";
+import SettingsIcon from "@mui/icons-material/Settings";
+import Button from "@mui/material/Button";
+import Tooltip from "@mui/material/Tooltip";
+import MenuItem from "@mui/material/MenuItem";
+import { useDispatch } from "react-redux";
+import { logout } from "../../features/auth/authSlice";
 
-const pages = ['Products', 'Pricing', 'Blog'];
-const settings = ['Profile', 'Account', 'Dashboard'];
+const pages = ["Homepage", "Search User", "view profile"];
+const settings = ["Profile", "Account", "Dashboard"];
 function DashboardNavbar() {
   const dispatch = useDispatch();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -37,7 +37,10 @@ function DashboardNavbar() {
   };
 
   return (
-    <AppBar position="static" sx={{padding:"14px",backgroundColor:"#A31ACB"}}>
+    <AppBar
+      position="static"
+      sx={{ padding: "14px", backgroundColor: "#A31ACB" }}
+    >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -47,18 +50,18 @@ function DashboardNavbar() {
             href="/"
             sx={{
               mr: 2,
-              display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
+              display: { xs: "none", md: "flex" },
+              fontFamily: "monospace",
               fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
+              letterSpacing: ".3rem",
+              color: "inherit",
+              textDecoration: "none",
             }}
           >
             DASHBOARD
           </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -73,18 +76,18 @@ function DashboardNavbar() {
               id="menu-appbar"
               anchorEl={anchorElNav}
               anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
+                vertical: "bottom",
+                horizontal: "left",
               }}
               keepMounted
               transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
+                vertical: "top",
+                horizontal: "left",
               }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
               sx={{
-                display: { xs: 'block', md: 'none' },
+                display: { xs: "block", md: "none" },
               }}
             >
               {pages.map((page) => (
@@ -101,23 +104,34 @@ function DashboardNavbar() {
             href=""
             sx={{
               mr: 2,
-              display: { xs: 'flex', md: 'none' },
+              display: { xs: "flex", md: "none" },
               flexGrow: 1,
-              fontFamily: 'monospace',
+              fontFamily: "monospace",
               fontWeight: 700,
-              letterSpacing: '.1rem',
-              color: 'inherit',
-              textDecoration: 'none',
+              letterSpacing: ".1rem",
+              color: "inherit",
+              textDecoration: "none",
             }}
           >
             DASHBOARD
           </Typography>
-          <Box justifyContent={"right"} sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' , marginLeft:"auto" , marginRight:"auto" } }}>
+          <Box
+            justifyContent={"right"}
+            sx={{
+              flexGrow: 1,
+              display: {
+                xs: "none",
+                md: "flex",
+                marginLeft: "auto",
+                marginRight: "auto",
+              },
+            }}
+          >
             {pages.map((page) => (
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, mx:4, color: 'white', display: 'block'}}
+                sx={{ my: 2, mx: 4, color: "white", display: "block" }}
               >
                 {page}
               </Button>
@@ -126,22 +140,22 @@ function DashboardNavbar() {
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 , mx:2 }}>
-                <SettingsIcon fontSize='large' sx={{color:"white"}} />
-              </IconButton> 
+              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0, mx: 2 }}>
+                <SettingsIcon fontSize="large" sx={{ color: "white" }} />
+              </IconButton>
             </Tooltip>
             <Menu
-              sx={{ mt: '45px' }}
+              sx={{ mt: "45px" }}
               id="menu-appbar"
               anchorEl={anchorElUser}
               anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
+                vertical: "top",
+                horizontal: "right",
               }}
               keepMounted
               transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
+                vertical: "top",
+                horizontal: "right",
               }}
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
@@ -151,10 +165,12 @@ function DashboardNavbar() {
                   <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
               ))}
-              <MenuItem onClick={()=>{
-                dispatch(logout())
-              }}>
-                  <Typography textAlign="center">Logout</Typography>
+              <MenuItem
+                onClick={() => {
+                  dispatch(logout());
+                }}
+              >
+                <Typography textAlign="center">Logout</Typography>
               </MenuItem>
             </Menu>
           </Box>
