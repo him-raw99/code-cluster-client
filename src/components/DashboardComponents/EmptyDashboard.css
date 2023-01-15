@@ -1,0 +1,19 @@
+.emptyDashboardBody{
+    color: rgb(41, 41, 41);
+    text-align: center;
+    padding-top: 10%;
+    padding-bottom: 5%;
+}
+
+.emptyDashboardBody h1{
+    font-size: 4rem;
+    font-family:'Times New Roman', Times, serif ;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.emptyDashboardBody h2{
+    font-size: 3rem;
+    font-family:'Times New Roman', Times, serif ;
+}

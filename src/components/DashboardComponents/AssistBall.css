@@ -4,3 +4,9 @@
     right: 1rem;
     z-index: 2;
 }
+
+.dashboard__body{
+    background-color: #fef9ff;
+    background-image: url("https://www.transparenttextures.com/patterns/axiom-pattern.png");
+    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}

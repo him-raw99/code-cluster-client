@@ -5,7 +5,7 @@ function Footer() {
   return (
     <>
       <div className="container" style={{marginTop:"5rem"}}>
-        <footer className="py-1 my-3">
+        <footer className="py-1 ">
           <ul className="nav justify-content-center border-bottom pb-3 mb-3 scroll-fix">
             <li className="nav-item">
               <NavLink className="nav-link px-4 text-muted" to={"/"}>
