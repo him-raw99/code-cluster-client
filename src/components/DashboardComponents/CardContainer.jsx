@@ -13,7 +13,7 @@ function CardContainer() {
   return (
     <>
     <div className="row">
-      {codes.map((code)=>{return(<Card title={code.title} code={code.code} id={code._id} isPublic={code.isPublic} />)})}
+      {codes.map((code)=>{return(<Card key={code._id} title={code.title} code={code.code} id={code._id} isPublic={code.isPublic} />)})}
     </div>
     </>
   )

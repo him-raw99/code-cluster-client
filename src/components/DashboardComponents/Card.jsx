@@ -4,9 +4,12 @@ import { IconButton } from "@mui/material";
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
+import { useDispatch } from "react-redux";
+import { showCode } from "../../features/editcode/editCodeSlice";
 import "./Card.css";
 
 export default function MediaCard(props) {
+  const dispatch = useDispatch();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [open, setOpen] = React.useState(false);
   const handleOpen = (event) => {
@@ -17,6 +20,11 @@ export default function MediaCard(props) {
     setAnchorEl(null);
     setOpen(false);
   };
+
+  const viewCode= ()=>{
+    dispatch(showCode({...props}));
+  }
+
   return (
     <div className="col-lg-3 col-md-4 col-sm-6">
       <div className="card">
@@ -54,6 +62,7 @@ export default function MediaCard(props) {
             className="card-button"
             color="secondary"
             size="small"
+            onClick={viewCode}
           >
             view code
           </Button>

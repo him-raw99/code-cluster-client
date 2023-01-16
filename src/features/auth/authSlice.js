@@ -30,7 +30,7 @@ export const sendSignupData = createAsyncThunk(
       const res = await authServices.signup(userData);
       return res.data;
     } catch (error) {
-      console.log(err);
+      console.log(error);
     }
   }
 );
