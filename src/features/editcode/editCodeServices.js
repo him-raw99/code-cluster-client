@@ -4,9 +4,9 @@ const url = "https://code-cluster-api.onrender.com";
 
 
 const getFullCode = async (states) => {
-    const response = await axios.get(url + "/codes/" + states.id,{
+    const response = await axios.get(url + "/codes/" + states.editCode.id,{
         headers:{
-            Authorization : "bearer "+states.token
+            Authorization : "bearer "+states.auth.token
         }
     });
     return response;

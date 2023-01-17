@@ -3,10 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { getFullCode } from '../../features/editcode/editCodeSlice';
 
 function SingleCodeModal() {
-  const editCodeStates = useSelector(state=>state.editCode);
+  const store = useSelector(state=>state);
   const dispatch = useDispatch();
   useEffect(()=>{
-    dispatch(getFullCode(editCodeStates));
+    dispatch(getFullCode(store));
   },[]);
   return (
     <div>SingleCodeModal</div>

@@ -1,14 +1,8 @@
-import React, { useEffect } from 'react'
-import { useDispatch , useSelector } from 'react-redux'
-import { getCode } from '../../features/dashboard/dashboardSlice'
+import React from 'react'
+import { useSelector } from 'react-redux'
 import Card from "./Card"
 
 function CardContainer() {
-  const token = useSelector((state)=>state.auth.token);
-  const dispatch = useDispatch();
-  useEffect(()=>{
-    dispatch(getCode(token));
-  },[])
   const codes = useSelector((state)=>state.dashboard.codes);
   return (
     <>

@@ -1,9 +1,6 @@
 import { createSlice , createAsyncThunk } from "@reduxjs/toolkit";
 import editCodeServices from "./editCodeServices";
 
-const token = localStorage.getItem("token");
-
-
 const initialState = {
     isLoading:false,
     title:"",
@@ -11,7 +8,6 @@ const initialState = {
     id:"",
     isPublic:false,
     show:false,
-    token: token ? token : "",
     success:false,
 };
 
@@ -46,7 +42,9 @@ const editCodeSlice = createSlice({
         [getFullCode.fulfilled]:(state,action)=>{
             state.isLoading=false;
             console.log("done ✌️  getting full code");
+            console.log(action.payload)
             state.code=action.payload.code.code;
+            state.success=action.payload.success;
             
         },
         [getFullCode.rejected]:(state)=>{
