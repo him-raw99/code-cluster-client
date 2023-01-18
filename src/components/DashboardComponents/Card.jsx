@@ -21,10 +21,6 @@ export default function MediaCard(props) {
     setOpen(false);
   };
 
-  const viewCode= ()=>{
-    dispatch(showCode({...props}));
-  }
-
   return (
     <div className="col-lg-3 col-md-4 col-sm-6">
       <div className="card">
@@ -62,7 +58,9 @@ export default function MediaCard(props) {
             className="card-button"
             color="secondary"
             size="small"
-            onClick={viewCode}
+            onClick={() => {
+              dispatch(showCode({ ...props }));
+            }}
           >
             view code
           </Button>

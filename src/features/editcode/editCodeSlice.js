@@ -32,7 +32,10 @@ const editCodeSlice = createSlice({
             state.title=action.payload.title;
             state.id=action.payload.id;
             state.isPublic=action.payload.isPublic;
-        }
+        },
+        hideCode:(state)=>{
+            state.show=false;
+        },
     },
     extraReducers:{
         [getFullCode.pending]:(state)=>{
@@ -42,7 +45,6 @@ const editCodeSlice = createSlice({
         [getFullCode.fulfilled]:(state,action)=>{
             state.isLoading=false;
             console.log("done ✌️  getting full code");
-            console.log(action.payload)
             state.code=action.payload.code.code;
             state.success=action.payload.success;
             
@@ -54,5 +56,5 @@ const editCodeSlice = createSlice({
     }
 })
 
-export const {showCode} = editCodeSlice.actions;
+export const {showCode , hideCode} = editCodeSlice.actions;
 export default editCodeSlice.reducer;
