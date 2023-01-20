@@ -43,10 +43,10 @@ const editCodeSlice = createSlice({
             console.log("pending-getting full code");
         },
         [getFullCode.fulfilled]:(state,action)=>{
-            state.isLoading=false;
             console.log("done ✌️  getting full code");
             state.code=action.payload.code.code;
             state.success=action.payload.success;
+            state.isLoading=false;
             
         },
         [getFullCode.rejected]:(state)=>{

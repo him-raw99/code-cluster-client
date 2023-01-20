@@ -8,49 +8,85 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import Skeleton from "@mui/material/Skeleton";
-
+import EditIcon from "@mui/icons-material/Edit";
+import { TextField } from "@mui/material";
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Switch from "./Switch";
 function SingleCodeModal() {
   const [open, setOpen] = React.useState(false);
+  const [form, setForm] = React.useState({title:"",code:"",isPublic:false});
+
+
   const store = useSelector((state) => state);
   const dispatch = useDispatch();
+
+
   useEffect(() => {
     dispatch(getFullCode(store));
     setOpen(store.editCode.show);
   }, []);
 
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
+
+  useEffect(() => {
+    if(!store.editCode.isLoading){
+      setForm(()=>{return {title:store.editCode.title,code:store.editCode.code,isPublic:store.editCode.isPublic}})
+    }
+  }, [store.editCode.isLoading]);
+
 
   const handleClose = () => {
     setOpen(false);
     dispatch(hideCode());
   };
-
+  
   return (
     <>
       <div>
-        <Button variant="outlined" onClick={handleClickOpen}>
-          Open alert dialog
-        </Button>
         <Dialog
           open={open}
           onClose={handleClose}
           aria-labelledby="alert-dialog-title"
           aria-describedby="alert-dialog-description"
+          fullWidth={true}
+          maxWidth="md"
         >
           <DialogTitle id="alert-dialog-title">
-            {"Use Google's location service?"}
+            <EditIcon sx={{ marginRight: "8px" }} />
+            {"Edit Your Code"}
           </DialogTitle>
           <DialogContent>
-            <DialogContentText id="alert-dialog-description">
-              {store.editCode.isLoading?<Skeleton/>:"Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running."}
+            <DialogContentText id="alert-dialog-description" component={'div'}>
+              <TextField
+                required
+                label="Title"
+                defaultValue={form.title}
+                sx={{ margin: "10px" }}
+              />
+              <br />
+              {store.editCode.isLoading ? (
+                <Skeleton />
+              ) : (
+                <TextField
+                  required
+                  label="Code"
+                  multiline
+                  fullWidth
+                  defaultValue={store.editCode.code}
+                  sx={{ margin: "10px", whiteSpace: "pre-wrap" }}
+                />
+              )}
+              <FormControlLabel
+                value="start"
+                control={<Switch/>}
+                label="Make Code Public"
+                labelPlacement="start"
+              />
             </DialogContentText>
           </DialogContent>
           <DialogActions>
-            <Button onClick={handleClose}>Disagree</Button>
+            <Button>save</Button>
             <Button onClick={handleClose} autoFocus>
-              Agree
+              close
             </Button>
           </DialogActions>
         </Dialog>
