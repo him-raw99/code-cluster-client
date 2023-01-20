@@ -11,7 +11,8 @@ import Skeleton from "@mui/material/Skeleton";
 import EditIcon from "@mui/icons-material/Edit";
 import { TextField } from "@mui/material";
 import FormControlLabel from '@mui/material/FormControlLabel';
-import Switch from "./Switch";
+import Switch from '@mui/material/Switch';
+
 function SingleCodeModal() {
   const [open, setOpen] = React.useState(false);
   const [form, setForm] = React.useState({title:"",code:"",isPublic:false});
@@ -64,7 +65,7 @@ function SingleCodeModal() {
               />
               <br />
               {store.editCode.isLoading ? (
-                <Skeleton />
+                <Skeleton height={100} sx={{ padding: "10px"}} />
               ) : (
                 <TextField
                   required
@@ -72,15 +73,17 @@ function SingleCodeModal() {
                   multiline
                   fullWidth
                   defaultValue={store.editCode.code}
-                  sx={{ margin: "10px", whiteSpace: "pre-wrap" }}
+                  sx={{margin:"10px",paddingRight:"10px",whiteSpace: "pre-wrap"}}
                 />
               )}
               <FormControlLabel
                 value="start"
-                control={<Switch/>}
+                control={store.editCode.isPublic ? <Switch color="success"  defaultChecked /> : <Switch color="success" />}
                 label="Make Code Public"
                 labelPlacement="start"
               />
+              
+
             </DialogContentText>
           </DialogContent>
           <DialogActions>

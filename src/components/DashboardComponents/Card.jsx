@@ -64,14 +64,6 @@ export default function MediaCard(props) {
           >
             view code
           </Button>
-          <Button
-            variant="contained"
-            className="card-button"
-            color="secondary"
-            size="small"
-          >
-            make {props.isPublic ? "Private" : "Public"}
-          </Button>
         </div>
       </div>
     </div>
