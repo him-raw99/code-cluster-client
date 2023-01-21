@@ -62,7 +62,7 @@ export default function MediaCard(props) {
               dispatch(showCode({ ...props }));
             }}
           >
-            view code
+            view / edit code
           </Button>
         </div>
       </div>

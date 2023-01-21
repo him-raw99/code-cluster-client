@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getFullCode, hideCode } from "../../features/editcode/editCodeSlice";
+import { changeVisibility, getFullCode, hideCode } from "../../features/editcode/editCodeSlice";
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
@@ -15,7 +15,6 @@ import Switch from '@mui/material/Switch';
 
 function SingleCodeModal() {
   const [open, setOpen] = React.useState(false);
-  const [form, setForm] = React.useState({title:"",code:"",isPublic:false});
 
 
   const store = useSelector((state) => state);
@@ -27,12 +26,6 @@ function SingleCodeModal() {
     setOpen(store.editCode.show);
   }, []);
 
-
-  useEffect(() => {
-    if(!store.editCode.isLoading){
-      setForm(()=>{return {title:store.editCode.title,code:store.editCode.code,isPublic:store.editCode.isPublic}})
-    }
-  }, [store.editCode.isLoading]);
 
 
   const handleClose = () => {
@@ -60,7 +53,7 @@ function SingleCodeModal() {
               <TextField
                 required
                 label="Title"
-                defaultValue={form.title}
+                defaultValue={store.editCode.title}
                 sx={{ margin: "10px" }}
               />
               <br />
@@ -78,9 +71,10 @@ function SingleCodeModal() {
               )}
               <FormControlLabel
                 value="start"
-                control={store.editCode.isPublic ? <Switch color="success"  defaultChecked /> : <Switch color="success" />}
+                control={<Switch color="success" checked={store.editCode.isPublic} />}
                 label="Make Code Public"
                 labelPlacement="start"
+                onClick={()=>dispatch(changeVisibility())}
               />
               
 
