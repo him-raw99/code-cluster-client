@@ -40,6 +40,12 @@ const editCodeSlice = createSlice({
             console.log("visibility changed")
             state.isPublic = !state.isPublic;
         },
+        changeTitle:(state,action)=>{
+            state.title = action.payload;
+        },
+        changeCode:(state,action)=>{
+            state.code = action.payload;
+        },
     },
     extraReducers:{
         [getFullCode.pending]:(state)=>{
@@ -60,5 +66,5 @@ const editCodeSlice = createSlice({
     }
 })
 
-export const {showCode , hideCode , changeVisibility} = editCodeSlice.actions;
+export const {showCode , hideCode , changeVisibility , changeTitle , changeCode} = editCodeSlice.actions;
 export default editCodeSlice.reducer;

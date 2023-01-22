@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { changeVisibility, getFullCode, hideCode } from "../../features/editcode/editCodeSlice";
+import { changeCode, changeTitle, changeVisibility, getFullCode, hideCode } from "../../features/editcode/editCodeSlice";
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
@@ -55,6 +55,7 @@ function SingleCodeModal() {
                 label="Title"
                 defaultValue={store.editCode.title}
                 sx={{ margin: "10px" }}
+                onChange={()=>{dispatch(changeTitle(event.target.value))}}
               />
               <br />
               {store.editCode.isLoading ? (
@@ -65,6 +66,7 @@ function SingleCodeModal() {
                   label="Code"
                   multiline
                   fullWidth
+                  onChange={()=>{dispatch(changeCode(event.target.value))}}
                   defaultValue={store.editCode.code}
                   sx={{margin:"10px",paddingRight:"10px",whiteSpace: "pre-wrap"}}
                 />
