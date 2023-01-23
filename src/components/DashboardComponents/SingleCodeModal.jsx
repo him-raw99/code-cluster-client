@@ -13,6 +13,7 @@ import { TextField } from "@mui/material";
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
 import { useNavigate } from "react-router-dom";
+import { reset } from "../../features/dashboard/dashboardSlice";
 
 function SingleCodeModal() {
   const [open, setOpen] = React.useState(false);
@@ -37,7 +38,8 @@ function SingleCodeModal() {
   const saveChanges = () => {
     dispatch(editCode(store));
     dispatch(hideCode());
-    navigate("/login");
+    dispatch(reset());
+    {!store.editCode.isLoading&&navigate("/login")}
   };
   
   return (

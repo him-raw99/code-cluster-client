@@ -20,7 +20,11 @@ export const getCode = createAsyncThunk("dashboard/getAllCodes", async(token)=>{
 const dashboardSlice = createSlice({
   name: "auth",
   initialState,
-  reducers: {},
+  reducers: {
+    reset:(state)=>{
+      state.codes=[];
+    }
+  },
   extraReducers: {
     [getCode.pending]:(state)=>{
         state.isLoading = true;
@@ -39,5 +43,5 @@ const dashboardSlice = createSlice({
   },
 });
 
-export const {} = dashboardSlice.actions;
+export const {reset} = dashboardSlice.actions;
 export default dashboardSlice.reducer;
