@@ -13,6 +13,21 @@ const getFullCode = async (states) => {
 };
 
 
-const editCodeServices = {getFullCode};
+const editCode = async (states) => {
+    const response = await axios.put(url + "/codes/" + states.editCode.id,{
+        title:states.editCode.title,
+        code:states.editCode.code,
+        isPublic:states.editCode.isPublic,
+    },{
+        headers:{
+            Authorization : "bearer "+states.auth.token
+        }
+    });
+    console.log(response);
+    return response;
+};
+
+
+const editCodeServices = {getFullCode , editCode};
 
 export default editCodeServices;

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { changeCode, changeTitle, changeVisibility, getFullCode, hideCode } from "../../features/editcode/editCodeSlice";
+import { changeCode, changeTitle, changeVisibility, editCode, getFullCode, hideCode } from "../../features/editcode/editCodeSlice";
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
@@ -12,10 +12,11 @@ import EditIcon from "@mui/icons-material/Edit";
 import { TextField } from "@mui/material";
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
+import { useNavigate } from "react-router-dom";
 
 function SingleCodeModal() {
   const [open, setOpen] = React.useState(false);
-
+  const navigate = useNavigate();
 
   const store = useSelector((state) => state);
   const dispatch = useDispatch();
@@ -31,6 +32,12 @@ function SingleCodeModal() {
   const handleClose = () => {
     setOpen(false);
     dispatch(hideCode());
+  };
+  
+  const saveChanges = () => {
+    dispatch(editCode(store));
+    dispatch(hideCode());
+    navigate("/login");
   };
   
   return (
@@ -59,7 +66,7 @@ function SingleCodeModal() {
               />
               <br />
               {store.editCode.isLoading ? (
-                <Skeleton height={100} sx={{ padding: "10px"}} />
+                <Skeleton height={100} sx={{ margin: "10px"}} />
               ) : (
                 <TextField
                   required
@@ -83,7 +90,9 @@ function SingleCodeModal() {
             </DialogContentText>
           </DialogContent>
           <DialogActions>
-            <Button>save</Button>
+            <Button onClick={saveChanges}>
+            save
+            </Button>
             <Button onClick={handleClose} autoFocus>
               close
             </Button>
