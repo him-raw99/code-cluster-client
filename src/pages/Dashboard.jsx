@@ -8,7 +8,6 @@ import AssistBall from "../components/DashboardComponents/AssistBall";
 import DashboardNavbar from "../components/DashboardComponents/DashboardNavbar";
 import Loader from "../components/DashboardComponents/Loader";
 import EmptyDashboard from "../components/DashboardComponents/EmptyDashboard";
-import SingleCodeModal from "../components/DashboardComponents/SingleCodeModal";
 import { getCode } from "../features/dashboard/dashboardSlice";
 
 function Dashboard() {
@@ -16,7 +15,6 @@ function Dashboard() {
   const dispatch = useDispatch();
   const {isLogin,token} = useSelector((state) => state.auth);
   const {isLoading,codes,success} = useSelector((state) => state.dashboard);
-  const {show} = useSelector((state) => state.editCode);
   useEffect(() => {
     if (!isLogin) {
       navigate("/login");
@@ -36,7 +34,6 @@ function Dashboard() {
       {success&&codes.length===0&&<EmptyDashboard/>}
       <AssistBall/>
       <Footer />
-      {show&&<SingleCodeModal/>}
       </div>
     </>
   );

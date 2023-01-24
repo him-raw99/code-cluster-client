@@ -5,7 +5,6 @@ import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import { useDispatch } from "react-redux";
-import { showCode } from "../../features/editcode/editCodeSlice";
 import "./Card.css";
 
 export default function MediaCard(props) {
@@ -58,9 +57,6 @@ export default function MediaCard(props) {
             className="card-button"
             color="secondary"
             size="small"
-            onClick={() => {
-              dispatch(showCode({ ...props }));
-            }}
           >
             view / edit code
           </Button>
