@@ -76,8 +76,8 @@ const editCodeSlice = createSlice({
         state.isLoading = true;
     },
     [editCode.fulfilled]: (state, action) => {
+      state.isLoading = false;
       console.log("done ✌️  editing code : ");
-      state.isLoading = !action.payload.success;
     },
     [editCode.rejected]: (state) => {
         console.log("an error occured while editing code");
