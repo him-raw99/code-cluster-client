@@ -6,6 +6,7 @@ import HomePage from "./pages/HomePage";
 
 import "./App.css";
 import Dashboard from "./pages/Dashboard";
+import EditPage from "./pages/EditPage";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Route path="/" element={<HomePage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/dashboard" element={<Dashboard/>} />
+      <Route path="/edit/:id" element={<EditPage/>} />
       <Route path="*" element={<ErrorPage />} />
     </Routes>
   );
