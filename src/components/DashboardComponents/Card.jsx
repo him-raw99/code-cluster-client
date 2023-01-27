@@ -4,11 +4,10 @@ import { IconButton } from "@mui/material";
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-import { useDispatch } from "react-redux";
 import "./Card.css";
+import { NavLink } from "react-router-dom";
 
 export default function MediaCard(props) {
-  const dispatch = useDispatch();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [open, setOpen] = React.useState(false);
   const handleOpen = (event) => {
@@ -44,22 +43,28 @@ export default function MediaCard(props) {
             }}
           >
             <MenuItem onClick={handleClose}>Share code</MenuItem>
-            <MenuItem onClick={handleClose}>Edit code</MenuItem>
-            <MenuItem onClick={handleClose}>Delete code</MenuItem>
+            <NavLink to={"/edit/" + props.id}>
+              <MenuItem onClick={handleClose}>Edit code</MenuItem>
+            </NavLink>
+            <NavLink to={"/edit/" + props.id}>
+              <MenuItem onClick={handleClose}>Delete code</MenuItem>
+            </NavLink>
           </Menu>
         </div>
         <div className="card-body">
           <p className="code newLine">{props.code}</p>
         </div>
         <div className="blur button-holder">
-          <Button
-            variant="contained"
-            className="card-button"
-            color="secondary"
-            size="small"
-          >
-            view / edit code
-          </Button>
+          <NavLink to={"/edit/" + props.id}>
+            <Button
+              variant="contained"
+              className="card-button"
+              color="secondary"
+              size="small"
+            >
+              view / edit code
+            </Button>
+          </NavLink>
         </div>
       </div>
     </div>

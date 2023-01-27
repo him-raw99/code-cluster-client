@@ -1,12 +1,14 @@
-import React from 'react'
-import { useParams } from 'react-router-dom'
+import React from "react";
+import { useParams } from "react-router-dom";
+import EditForm from "../components/EditPageComponents/EditForm";
 
 function EditPage() {
-    const {id} = useParams();
-    console.log(id);
+  const { id } = useParams();
   return (
-    <div>EditPage</div>
-  )
+    <>
+    <EditForm id={id}/>
+    </>
+  );
 }
 
-export default EditPage
+export default EditPage;
