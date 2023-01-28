@@ -1,11 +1,20 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import editCodeServices from "./editCodeServices";
 
 const initialState={
     isLoading:false,
     codeState:{},
-    token:"",
-    id:"",
 }
+
+export const getFullCode = createAsyncThunk("editCode/getFullCode", async(state)=>{
+    try{
+        const res = await editCodeServices.getFullCode(state);
+        return res.data;
+    }
+    catch(err){
+        console.log(err);
+    }
+})
 
 const editCodeSlice = createSlice({
     name:"editCodeSlice",
@@ -14,14 +23,21 @@ const editCodeSlice = createSlice({
         editCode:(state,action)=>{
             state.codeState = action.payload;
         },
-        setToken:(state,action)=>{
-            state.token=action.payload;
+    },
+    extraReducers:{
+        [getFullCode.pending]:(state)=>{
+            state.isLoading=true;
         },
-        setId:(state,action)=>{
-            state.id=action.payload;
+        [getFullCode.fulfilled]:(state,action)=>{
+            console.log("done✌️-getting-full-code");
+            state.codeState = action.payload.code;
+            state.isLoading=false;
+        },
+        [getFullCode.rejected]:(state)=>{
+            state.isLoading=false;
+            console.log("-------------------- error has occured while getting codes ------------");
         },
     },
-    extraReducers:{},
 })
 
 
