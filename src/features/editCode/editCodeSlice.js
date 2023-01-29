@@ -4,6 +4,7 @@ import editCodeServices from "./editCodeServices";
 const initialState={
     isLoading:false,
     codeState:{},
+    backToDashboard:false,
 }
 
 export const getFullCode = createAsyncThunk("editCode/getFullCode", async(state)=>{
@@ -16,13 +17,25 @@ export const getFullCode = createAsyncThunk("editCode/getFullCode", async(state)
     }
 })
 
+export const updateCode = createAsyncThunk("editCode/updateCode", async(state)=>{
+    try{
+        const res = await editCodeServices.updateCode(state);
+        return res.data;
+    }
+    catch(err){
+        console.log(err);
+    }
+})
+
 const editCodeSlice = createSlice({
     name:"editCodeSlice",
     initialState,
     reducers:{
-        editCode:(state,action)=>{
-            state.codeState = action.payload;
-        },
+        reset:(state)=>{
+            state.isLoading=false;
+            state.codeState={};
+            state.backToDashboard=false;
+        }
     },
     extraReducers:{
         [getFullCode.pending]:(state)=>{
@@ -37,9 +50,22 @@ const editCodeSlice = createSlice({
             state.isLoading=false;
             console.log("-------------------- error has occured while getting codes ------------");
         },
+        [updateCode.pending]:(state)=>{
+            state.isLoading=true;
+        },
+        [updateCode.fulfilled]:(state,action)=>{
+            console.log("done✌️-updating-full-code");
+            console.log(action.payload);
+            state.isLoading=false;
+            state.backToDashboard = !state.backToDashboard;
+        },
+        [updateCode.rejected]:(state)=>{
+            state.isLoading=false;
+            console.log("-------------------- error has occured while updating codes ------------");
+        },
     },
 })
 
 
-export const {editCode , setToken , setId} = editCodeSlice.actions;
+export const {reset} = editCodeSlice.actions;
 export default editCodeSlice.reducer;
