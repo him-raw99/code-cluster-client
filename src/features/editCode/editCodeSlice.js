@@ -35,6 +35,10 @@ const editCodeSlice = createSlice({
             state.isLoading=false;
             state.codeState={};
             state.backToDashboard=false;
+        },
+        close:(state)=>{
+            state.backToDashboard=!state.backToDashboard;
+            state.isLoading=!state.isLoading;
         }
     },
     extraReducers:{
@@ -67,5 +71,5 @@ const editCodeSlice = createSlice({
 })
 
 
-export const {reset} = editCodeSlice.actions;
+export const {reset , close} = editCodeSlice.actions;
 export default editCodeSlice.reducer;

@@ -4,7 +4,7 @@ const year = new Date().getFullYear();
 function Footer() {
   return (
     <>
-      <div className="container" style={{marginTop:"5rem"}}>
+      <div className="container" style={{marginTop:"5rem",fontSize:"1.1rem"}}>
         <footer className="py-1 ">
           <ul className="nav justify-content-center border-bottom pb-3 mb-3 scroll-fix">
             <li className="nav-item">
