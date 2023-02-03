@@ -13,8 +13,8 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { useDispatch } from "react-redux";
 import { logout } from "../../features/auth/authSlice";
+import { NavLink } from "react-router-dom";
 
-const pages = ["Homepage", "Search User", "view profile"];
 const settings = ["Profile", "Account", "Dashboard"];
 function DashboardNavbar() {
   const dispatch = useDispatch();
@@ -90,11 +90,21 @@ function DashboardNavbar() {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))}
+              <MenuItem onClick={handleCloseNavMenu}>
+                <Typography textAlign="center">
+                  <NavLink to="/dashboard">Dashboard</NavLink>
+                </Typography>
+              </MenuItem>
+              <MenuItem onClick={handleCloseNavMenu}>
+                <Typography textAlign="center">
+                  <NavLink to="/search">Search User</NavLink>
+                </Typography>
+              </MenuItem>
+              <MenuItem>
+                <Typography textAlign="center">
+                  <NavLink to="/edit">Add Code</NavLink>
+                </Typography>
+              </MenuItem>
             </Menu>
           </Box>
           <Typography
@@ -127,15 +137,31 @@ function DashboardNavbar() {
               },
             }}
           >
-            {pages.map((page) => (
+            <NavLink to="/dashboard">
               <Button
-                key={page}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, mx: 4, color: "white", display: "block" }}
               >
-                {page}
+                HOMEPAGE
               </Button>
-            ))}
+            </NavLink>
+            <NavLink to="/search">
+              <Button
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, mx: 4, color: "white", display: "block" }}
+              >
+                Search User
+              </Button>
+            </NavLink>
+
+            <NavLink to="/edit">
+              <Button
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, mx: 4, color: "white", display: "block" }}
+              >
+                ADD CODE
+              </Button>
+            </NavLink>
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
