@@ -27,6 +27,16 @@ export const updateCode = createAsyncThunk("editCode/updateCode", async(state)=>
     }
 })
 
+export const newCode = createAsyncThunk("editCode/newCode", async(state)=>{
+    try{
+        const res = await editCodeServices.newCode(state);
+        return res.data;
+    }
+    catch(err){
+        console.log(err);
+    }
+})
+
 const editCodeSlice = createSlice({
     name:"editCodeSlice",
     initialState,
@@ -66,6 +76,19 @@ const editCodeSlice = createSlice({
         [updateCode.rejected]:(state)=>{
             state.isLoading=false;
             console.log("-------------------- error has occured while updating codes ------------");
+        },
+        [newCode.pending]:(state)=>{
+            state.isLoading=true;
+        },
+        [newCode.fulfilled]:(state,action)=>{
+            console.log("done✌️-posting-new-code");
+            console.log(action.payload);
+            state.isLoading=false;
+            state.backToDashboard = !state.backToDashboard;
+        },
+        [newCode.rejected]:(state)=>{
+            state.isLoading=false;
+            console.log("-------------------- error has occured while posting new codes ------------");
         },
     },
 })

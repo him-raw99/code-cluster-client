@@ -18,6 +18,15 @@ const updateCode = async (state) => {
     return response;
 }
 
-const editCodeServices = {getFullCode , updateCode};
+const newCode = async (state) => {
+    const response = await axios.post(url+"/codes",state.code,{
+        headers:{
+            Authorization : "bearer "+state.token
+        }
+    })
+    return response;
+}
+
+const editCodeServices = {getFullCode , updateCode , newCode};
 
 export default editCodeServices;

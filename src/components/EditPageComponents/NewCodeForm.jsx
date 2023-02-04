@@ -1,9 +1,22 @@
-import React, { useState } from "react";
+import React, { useState , useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { newCode } from "../../features/editCode/editCodeSlice";
 import "./EditForm.css"
 
 function NewCodeForm() {
   const [code, setCode] = useState({ title: "", code: "", isPublic: false });
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const {token} = useSelector((store)=>store.auth);
+  const { isLoading, backToDashboard } = useSelector(
+    (store) => store.editCode
+  );
+
+  useEffect(() => {
+      backToDashboard && navigate("/dashboard");
+  }, [isLoading]);
+
   function handleChange(event) {
     const { name, value } = event.target;
     setCode((prevValue) => {
@@ -13,7 +26,10 @@ function NewCodeForm() {
   function makePublic(){
     setCode((prevVal)=>{return {...prevVal,isPublic:!prevVal.isPublic}})
   }
-  const navigate = useNavigate();
+
+  function handelSubmit(){
+    dispatch(newCode({token,code}));
+  }
   return (
     <>
       title
@@ -41,9 +57,7 @@ function NewCodeForm() {
       </label>
       <div
         className="btn btn-primary"
-        onClick={() => {
-          console.log(code);
-        }}
+        onClick={handelSubmit}
       >
         save
       </div>
