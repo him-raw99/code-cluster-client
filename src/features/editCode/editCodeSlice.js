@@ -5,6 +5,7 @@ const initialState={
     isLoading:false,
     codeState:{},
     backToDashboard:false,
+    err:"",
 }
 
 export const getFullCode = createAsyncThunk("editCode/getFullCode", async(state)=>{
@@ -45,6 +46,7 @@ const editCodeSlice = createSlice({
             state.isLoading=false;
             state.codeState={};
             state.backToDashboard=false;
+            state.err="";
         },
         close:(state)=>{
             state.backToDashboard=!state.backToDashboard;
@@ -71,7 +73,7 @@ const editCodeSlice = createSlice({
             console.log("done✌️-updating-full-code");
             console.log(action.payload);
             state.isLoading=false;
-            state.backToDashboard = !state.backToDashboard;
+            state.backToDashboard = action.payload.success;
         },
         [updateCode.rejected]:(state)=>{
             state.isLoading=false;
@@ -82,9 +84,9 @@ const editCodeSlice = createSlice({
         },
         [newCode.fulfilled]:(state,action)=>{
             console.log("done✌️-posting-new-code");
-            console.log(action.payload);
             state.isLoading=false;
-            state.backToDashboard = !state.backToDashboard;
+            state.err=action.payload.message;
+            state.backToDashboard = action.payload.success;
         },
         [newCode.rejected]:(state)=>{
             state.isLoading=false;

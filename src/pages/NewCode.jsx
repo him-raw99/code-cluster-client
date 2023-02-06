@@ -4,9 +4,11 @@ import NewCodeForm from '../components/EditPageComponents/NewCodeForm'
 import Footer from '../components/HomePageComponents/Footer'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import SnackBar from '../components/LoginPageComponents/SnackBar'
 function NewCode() {
   const navigate = useNavigate();
   const {isLogin} = useSelector((state) => state.auth);
+  const {err , isLoading} = useSelector((state) => state.editCode);
   useEffect(() => {
     if (!isLogin) {
       navigate("/login");
@@ -16,6 +18,7 @@ function NewCode() {
     <>
         <DashboardNavbar/>
         <NewCodeForm/>
+        {!isLoading &&err!="" && <SnackBar err={true} message={err}/>}
         <Footer/>
     </>
   )

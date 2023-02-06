@@ -35,7 +35,7 @@ function LoginPage() {
           {/* isLoading Modal */}
           {isLoading && <LoadingModal />}
           {/* snackbar if login fails*/}
-          {!isLoading && message != "" && <SnackBar />}
+          {!isLoading && message != "" && <SnackBar err={!isLogin} message={message} />}
           <Footer />
         </div>
       )}
