@@ -79,7 +79,6 @@ function EditForm(props) {
         className="btn btn-danger"
         onClick={() => {
           dispatch(deleteCode({id:props.id,token}));
-          dispatch(close);
         }}
       >
         dlt
