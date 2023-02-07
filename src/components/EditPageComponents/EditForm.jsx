@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { close, getFullCode, updateCode } from "../../features/editCode/editCodeSlice";
+import { close, deleteCode, getFullCode, updateCode } from "../../features/editCode/editCodeSlice";
 import Loader from "../DashboardComponents/Loader";
 import "./EditForm.css"
 
@@ -58,6 +58,7 @@ function EditForm(props) {
         <input checked={edittedCode.isPublic} onChange={makePublic} type="checkbox" />
         <div className="checkmark"></div>
       </label>
+      <br/>
       <div
         className="btn btn-primary"
         onClick={() => {
@@ -73,6 +74,15 @@ function EditForm(props) {
         }}
       >
         close
+      </div>
+      <div
+        className="btn btn-danger"
+        onClick={() => {
+          dispatch(deleteCode({id:props.id,token}));
+          dispatch(close);
+        }}
+      >
+        dlt
       </div>
     </>
   );

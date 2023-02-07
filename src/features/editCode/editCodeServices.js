@@ -9,6 +9,7 @@ const getFullCode = async (state) => {
     })
     return response;
 }
+
 const updateCode = async (state) => {
     const response = await axios.put(url+"/codes/"+state.id,state.edittedCode,{
         headers:{
@@ -27,6 +28,15 @@ const newCode = async (state) => {
     return response;
 }
 
-const editCodeServices = {getFullCode , updateCode , newCode};
+const deleteCode = async (state) => {
+    const response = await axios.delete(url+"/codes/"+state.id,{
+        headers:{
+            Authorization : "bearer "+state.token
+        }
+    })
+    return response;
+}
+
+const editCodeServices = {getFullCode , updateCode , newCode , deleteCode};
 
 export default editCodeServices;
