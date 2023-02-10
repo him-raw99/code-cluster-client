@@ -43,11 +43,11 @@ function DashboardNavbar() {
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
+        <NavLink to="/dashboard">
           <Typography
             variant="h3"
             noWrap
             component="a"
-            href="/"
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
@@ -60,6 +60,7 @@ function DashboardNavbar() {
           >
             DASHBOARD
           </Typography>
+          </NavLink>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
@@ -107,6 +108,7 @@ function DashboardNavbar() {
               </MenuItem>
             </Menu>
           </Box>
+          <NavLink to="/dashboard">
           <Typography
             variant="h5"
             noWrap
@@ -125,6 +127,7 @@ function DashboardNavbar() {
           >
             DASHBOARD
           </Typography>
+          </NavLink>
           <Box
             justifyContent={"right"}
             sx={{
