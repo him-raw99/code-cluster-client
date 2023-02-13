@@ -6,6 +6,7 @@ const initialState={
     codeState:{},
     backToDashboard:false,
     err:"",
+    delete:false,
 }
 
 export const getFullCode = createAsyncThunk("editCode/getFullCode", async(state)=>{
@@ -61,6 +62,9 @@ const editCodeSlice = createSlice({
         close:(state)=>{
             state.backToDashboard=!state.backToDashboard;
             state.isLoading=!state.isLoading;
+        },
+        deleteModal:(state)=>{
+            state.delete = !state.delete;
         }
     },
     extraReducers:{
@@ -119,5 +123,5 @@ const editCodeSlice = createSlice({
 })
 
 
-export const {reset , close} = editCodeSlice.actions;
+export const {reset , close , deleteModal} = editCodeSlice.actions;
 export default editCodeSlice.reducer;

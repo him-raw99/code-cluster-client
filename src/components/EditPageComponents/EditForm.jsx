@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import {
   close,
   deleteCode,
+  deleteModal,
   getFullCode,
   updateCode,
 } from "../../features/editCode/editCodeSlice";
@@ -93,7 +94,8 @@ function EditForm(props) {
           <div
             className="btn btn-danger"
             onClick={() => {
-              dispatch(deleteCode({ id: props.id, token }));
+              dispatch(deleteModal());
+              // dispatch(deleteCode({ id: props.id, token }));
             }}
           >
             dlt

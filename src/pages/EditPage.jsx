@@ -7,6 +7,7 @@ import Loader from "../components/DashboardComponents/Loader"
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Redirecting from "../components/LoginPageComponents/Redirecting";
+import DeleteModal from "../components/EditPageComponents/DeleteModal";
 
 function EditPage() {
   const navigate = useNavigate();
@@ -21,6 +22,7 @@ function EditPage() {
   return (
     <>
     {isLogin?<>
+      <DeleteModal />
       {isLoading && <Loader/>}
       <DashboardNavbar />
       <EditForm id={id} />
