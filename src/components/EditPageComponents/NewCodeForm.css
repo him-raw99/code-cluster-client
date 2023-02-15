@@ -1,0 +1,40 @@
+.form-container {
+  width: 45rem;
+  text-align: center;
+  padding: 2rem;
+  padding-bottom: 5rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 4rem;
+  background: rgba(255, 255, 255, 0.19);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.newCodeForm-title {
+  text-decoration: underline dotted 15px rgb(182, 180, 180);
+  color: rgb(57, 57, 57);
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: 4.6rem;
+  margin-bottom: 2rem;
+}
+
+.toggleButton{
+    float: left;
+}
+
+
+
+@media screen and (max-width: 790px) {
+    .form-container{
+        width: 30rem;
+    }
+  }
+  
+@media screen and (max-width: 500px) {
+    .form-container{
+        width: 20rem;
+    }
+  }
+  

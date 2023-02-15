@@ -1,20 +1,25 @@
-import React, { useState , useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { newCode, reset } from "../../features/editCode/editCodeSlice";
-import "./EditForm.css"
+import { newCode } from "../../features/editCode/editCodeSlice";
+import SaveAsIcon from "@mui/icons-material/SaveAs";
+import TextField from "@mui/material/TextField";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Switch from "@mui/material/Switch";
+import Button from "@mui/material/Button";
+import CloseIcon from "@mui/icons-material/Close";
+import "./NewCodeForm.css";
+import "./EditForm.css";
 
 function NewCodeForm() {
   const [code, setCode] = useState({ title: "", code: "", isPublic: false });
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const {token} = useSelector((store)=>store.auth);
-  const { isLoading, backToDashboard } = useSelector(
-    (store) => store.editCode
-  );
+  const { token } = useSelector((store) => store.auth);
+  const { isLoading, backToDashboard } = useSelector((store) => store.editCode);
 
   useEffect(() => {
-      backToDashboard && navigate("/dashboard");
+    backToDashboard && navigate("/dashboard");
   }, [isLoading]);
 
   function handleChange(event) {
@@ -23,51 +28,78 @@ function NewCodeForm() {
       return { ...prevValue, [name]: value };
     });
   }
-  function makePublic(){
-    setCode((prevVal)=>{return {...prevVal,isPublic:!prevVal.isPublic}})
+  function makePublic() {
+    setCode((prevVal) => {
+      return { ...prevVal, isPublic: !prevVal.isPublic };
+    });
   }
 
-  function handelSubmit(){
-    dispatch(newCode({token,code}));
+  function handelSubmit() {
+    dispatch(newCode({ token, code }));
   }
   return (
     <>
-      title
-      <textarea
-        type="text"
-        name="title"
-        value={code.title}
-        onChange={handleChange}
-      />
-      <br />
-      code
-      <textarea
-        style={{ width: "50rem", height: "10rem" }}
-        type="text"
-        name="code"
-        className="newLine"
-        value={code.code}
-        onChange={handleChange}
-      />
-      <br />
-      make public
-      <label className="container" >
-        <input onChange={makePublic} type="checkbox" />
-        <div className="checkmark"></div>
-      </label>
-      <div
-        className="btn btn-primary"
-        onClick={handelSubmit}
-      >
-        save
-      </div>
-      <div
-        className="btn btn-primary"
-        onClick={() => {
-          navigate("/dashboard");
-        }}
-      >
-        close
+      <div className="form-container">
+        <h1 className="newCodeForm-title">New Code</h1>
+        <TextField
+          id="outlined-basic"
+          margin="normal"
+          placeholder="Add a title"
+          label="Title"
+          value={code.title}
+          onChange={handleChange}
+          variant="outlined"
+          required
+          name="title"
+          fullWidth
+        />
+        <br />
+        <TextField
+          id="outlined-textarea"
+          label="Code"
+          placeholder="Write Code"
+          multiline
+          name="code"
+          margin="normal"
+          className="newLine"
+          value={code.code}
+          onChange={handleChange}
+          minRows={4}
+          required
+          fullWidth
+        />
+        <br />
+        <br />
+        <FormControlLabel
+          labelPlacement="start"
+          control={<Switch onChange={makePublic} />}
+          label="Public"
+          className="toggleButton"
+          sx={{ marginLeft: "0" , }}
+        />
+        <div style={{float:"right"}}>
+          <Button
+            variant="contained"
+            color="success"
+            endIcon={<SaveAsIcon />}
+            onClick={handelSubmit}
+            sx={{ marginRight: "1.5rem" }}
+            size="large"
+          >
+            Save
+          </Button>
+          <Button
+            variant="outlined"
+            endIcon={<CloseIcon />}
+            onClick={() => {
+              navigate("/dashboard");
+            }}
+            color="warning"
+            size="large"
+          >
+            Close
+          </Button>
+        </div>
       </div>
     </>
   );
