@@ -22,7 +22,7 @@ function EditPage() {
   return (
     <>
     {isLogin?<>
-      <DeleteModal />
+      <DeleteModal id={id} />
       {isLoading && <Loader/>}
       <DashboardNavbar />
       <EditForm id={id} />

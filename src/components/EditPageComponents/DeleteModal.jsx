@@ -5,25 +5,29 @@ import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
 import Typography from "@mui/material/Typography";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteModal } from "../../features/editCode/editCodeSlice";
+import { deleteCode, deleteModal } from "../../features/editCode/editCodeSlice";
+import DeleteIcon from "@mui/icons-material/Delete";
+import Button from "@mui/material/Button";
+import Stack from '@mui/material/Stack';
 
 const style = {
   position: "absolute",
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 400,
+  width: 500,
   bgcolor: "background.paper",
-  border: "2px solid #000",
+  border: "1px solid #000",
   boxShadow: 24,
   p: 4,
 };
 
-export default function DeleteModal() {
-    const dispatch = useDispatch();
-    const Delete = useSelector((store)=>store.editCode.delete);
+export default function DeleteModal(props) {
+  const dispatch = useDispatch();
+  const Delete = useSelector((store) => store.editCode.delete);
+  const { token } = useSelector((store) => store.auth);
   const handleClose = () => dispatch(deleteModal());
-  console.log(Delete);
+  const handleDelete = () => dispatch(deleteCode({ id: props.id, token }));
   return (
     <div>
       <Modal
@@ -40,11 +44,21 @@ export default function DeleteModal() {
         <Fade in={Delete}>
           <Box sx={style}>
             <Typography id="transition-modal-title" variant="h6" component="h2">
-              Text in a modal
+              DELETE
             </Typography>
             <Typography id="transition-modal-description" sx={{ mt: 2 }}>
-              Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+              Are you sure you want to delete this code. the changes you make
+              will be irreversable.
             </Typography>
+
+            <Stack direction="row" spacing={2} sx={{marginTop:"20px"}}>
+              <Button variant="contained" color="error" onClick={handleDelete} startIcon={<DeleteIcon />}>
+                Delete
+              </Button>
+              <Button variant="outlined" onClick={handleClose} >
+                Close
+              </Button>
+            </Stack>
           </Box>
         </Fade>
       </Modal>

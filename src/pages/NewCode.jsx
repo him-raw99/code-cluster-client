@@ -9,7 +9,7 @@ import Redirecting from "../components/LoginPageComponents/Redirecting";
 function NewCode() {
   const navigate = useNavigate();
   const { isLogin } = useSelector((state) => state.auth);
-  const { err, isLoading } = useSelector((state) => state.editCode);
+  const { err, isLoading , success } = useSelector((state) => state.editCode);
   useEffect(() => {
     if (!isLogin) {
       navigate("/login");
@@ -20,7 +20,7 @@ function NewCode() {
       {isLogin?<>
         <DashboardNavbar />
         <NewCodeForm />
-        {!isLoading && err != "" && <SnackBar err={true} message={err} />}
+        {!isLoading && err != "" && <SnackBar err={success} message={err} />}
         <Footer />
       </>:<Redirecting />}
     </>

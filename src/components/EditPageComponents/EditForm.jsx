@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import {
   close,
-  deleteCode,
   deleteModal,
   getFullCode,
   updateCode,
@@ -95,7 +94,6 @@ function EditForm(props) {
             className="btn btn-danger"
             onClick={() => {
               dispatch(deleteModal());
-              // dispatch(deleteCode({ id: props.id, token }));
             }}
           >
             dlt
