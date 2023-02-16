@@ -35,7 +35,6 @@ function NewCodeForm() {
   }
 
   function handelSubmit() {
-    console.log(code);
     dispatch(newCode({ token, code }));
   }
   return (
