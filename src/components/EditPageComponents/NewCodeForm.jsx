@@ -35,6 +35,7 @@ function NewCodeForm() {
   }
 
   function handelSubmit() {
+    console.log(code);
     dispatch(newCode({ token, code }));
   }
   return (
@@ -72,12 +73,18 @@ function NewCodeForm() {
         <br />
         <FormControlLabel
           labelPlacement="start"
-          control={<Switch onChange={makePublic} />}
+          control={
+            <Switch
+              onChange={() => {
+                makePublic();
+              }}
+            />
+          }
           label="Public"
           className="toggleButton"
-          sx={{ marginLeft: "0" , }}
+          sx={{ marginLeft: "0" }}
         />
-        <div style={{float:"right"}}>
+        <div style={{ float: "right" }}>
           <Button
             variant="contained"
             color="success"

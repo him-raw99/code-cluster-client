@@ -1,5 +1,6 @@
 import axios from "axios";
 const url = "https://code-cluster-api.onrender.com";
+// const url = "http://localhost:4000";
 
 const getFullCode = async (state) => {
     const response = await axios.get(url+"/codes/"+state.id,{
