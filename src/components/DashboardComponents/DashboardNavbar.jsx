@@ -51,7 +51,6 @@ function DashboardNavbar() {
               display: { xs: "none", md: "flex" },
               fontFamily: "monospace",
               fontWeight: 700,
-              letterSpacing: ".3rem",
               color: "inherit",
               textDecoration: "none",
             }}
@@ -90,7 +89,7 @@ function DashboardNavbar() {
             >
               <MenuItem onClick={handleCloseNavMenu}>
                 <Typography textAlign="center">
-                  <NavLink to="/dashboard">Dashboard</NavLink>
+                  <NavLink to="/">Homepage</NavLink>
                 </Typography>
               </MenuItem>
               <MenuItem onClick={handleCloseNavMenu}>
@@ -134,7 +133,7 @@ function DashboardNavbar() {
               },
             }}
           >
-            <NavLink to="/dashboard">
+            <NavLink to="/">
               <Button
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, mx: 4, color: "white", display: "block" }}
