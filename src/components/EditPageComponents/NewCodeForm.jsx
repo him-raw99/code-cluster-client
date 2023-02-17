@@ -83,7 +83,7 @@ function NewCodeForm() {
           className="toggleButton"
           sx={{ marginLeft: "0" }}
         />
-        <div className="button-holder">
+        <div className="button-holder-newCode">
           <Button
             variant="contained"
             color="success"

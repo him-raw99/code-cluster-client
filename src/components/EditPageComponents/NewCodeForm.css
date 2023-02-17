@@ -27,7 +27,7 @@
     float: left;
 }
 
-.button-holder{
+.button-holder-newCode{
   float: right;
 }
 
@@ -46,7 +46,7 @@
         font-size: 3rem;
     }
 
-    .button-holder{
+    .button-holder-newCode{
       width: max-content;
     }
   }
