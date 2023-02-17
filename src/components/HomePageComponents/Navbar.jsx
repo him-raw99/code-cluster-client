@@ -2,9 +2,11 @@ import React, { useState, useEffect } from "react";
 import LoginIcon from "@mui/icons-material/Login";
 import { NavLink } from "react-router-dom";
 import { Button } from "@mui/material";
+import { useSelector } from "react-redux";
 import "./Navbar.css";
 const Navbar = () => {
   const [scroll, setScroll] = useState(0);
+  const {isLogin} = useSelector((state)=>state.auth);
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -51,7 +53,7 @@ const Navbar = () => {
             variant="contained"
             endIcon={<LoginIcon />}
           >
-            Login
+            {isLogin?"Dashboard":"Login"}
           </Button>
         </NavLink>
       </div>
