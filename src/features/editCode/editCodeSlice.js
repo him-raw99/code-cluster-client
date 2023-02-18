@@ -89,7 +89,7 @@ const editCodeSlice = createSlice({
         },
         [updateCode.fulfilled]:(state,action)=>{
             console.log("done✌️-updating-full-code");
-            console.log(action.payload);
+            if(!action.payload.success){ state.err = action.payload.message};
             state.isLoading=false;
             state.success=action.payload.success;
             state.backToDashboard = action.payload.success;

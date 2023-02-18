@@ -23,7 +23,7 @@ function NewCode() {
           <div className="new-code-body">
             <DashboardNavbar />
             <NewCodeForm />
-            {isLoading && <LoadingModal/>}
+            {isLoading && <LoadingModal />}
             {!isLoading && err != "" && (
               <SnackBar err={!success} message={err} />
             )}
