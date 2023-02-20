@@ -7,6 +7,7 @@ import Dashboard from "./pages/Dashboard";
 import EditPage from "./pages/EditPage";
 import NewCode from "./pages/NewCode";
 import SearchPage from "./pages/SearchPage";
+import UserPage from "./pages/UserPage";
 import "./App.css";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
       <Route path="/edit" element={<NewCode/>} />
       <Route path="/edit/:id" element={<EditPage/>} />
       <Route path="/search" element={<SearchPage/>} />
+      <Route path="/search/:user" element={<UserPage />} />
       <Route path="*" element={<ErrorPage />} />
     </Routes>
   );
