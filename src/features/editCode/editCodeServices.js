@@ -2,24 +2,7 @@ import axios from "axios";
 const url = "https://code-cluster-api.onrender.com";
 // const url = "http://localhost:4000";
 
-const getFullCode = async (state) => {
-    const response = await axios.get(url+"/codes/"+state.id,{
-        headers:{
-            Authorization : "bearer "+state.token
-        }
-    })
-    return response;
-}
-
-const updateCode = async (state) => {
-    const response = await axios.put(url+"/codes/"+state.id,state.edittedCode,{
-        headers:{
-            Authorization : "bearer "+state.token
-        }
-    })
-    return response;
-}
-
+// Create
 const newCode = async (state) => {
     const response = await axios.post(url+"/codes",state.code,{
         headers:{
@@ -29,6 +12,27 @@ const newCode = async (state) => {
     return response;
 }
 
+//Read
+const getFullCode = async (state) => {
+    const response = await axios.get(url+"/codes/"+state.id,{
+        headers:{
+            Authorization : "bearer "+state.token
+        }
+    })
+    return response;
+}
+
+//Update
+const updateCode = async (state) => {
+    const response = await axios.put(url+"/codes/"+state.id,state.edittedCode,{
+        headers:{
+            Authorization : "bearer "+state.token
+        }
+    })
+    return response;
+}
+
+//Delete
 const deleteCode = async (state) => {
     const response = await axios.delete(url+"/codes/"+state.id,{
         headers:{
