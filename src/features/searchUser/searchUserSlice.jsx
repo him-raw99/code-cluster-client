@@ -1,4 +1,5 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import searchUserServices from "./searchUserServices";
 
 const initialState = {
     user:[],
@@ -6,6 +7,15 @@ const initialState = {
     success:false,
     error:"",
 }
+
+export const searchUser = createAsyncThunk("searchUserSlice/searchUser",async(state)=>{
+    try {
+        const res = await searchUserServices.searchUser(state);
+        console.log(res);
+    } catch (error) {
+        console.log(error);
+    }
+})
 
 const searchUserSlice = createSlice({
     name:"searchUser",
