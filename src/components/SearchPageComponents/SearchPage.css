@@ -3,18 +3,24 @@
   background: linear-gradient(
     0deg,
     rgba(0, 0, 0, 0) 0%,
-    rgba(212, 103, 247, 1) 77%
+    rgba(255, 203, 106, 0.717) 77%
   );
-  padding-top: 10rem;
+  padding-top: 9rem;
 }
 
 .search-bar-holder{
     background-color: #fff;
     width: 90%;
     margin-inline: auto;
-    padding: 1rem;
-    padding-inline: 0.5rem;
+    padding: 1.5rem;
+    padding-inline: 3rem;
     border-radius: 4rem;
+}
+
+.search-image{
+  width: 50%;
+  position: relative;
+  transform: translate(60%);
 }
 
 .search-bar{
@@ -38,14 +44,13 @@
     --hover-color: #111;
     --arrow-width: 10px;
     --arrow-stroke: 2px;
-    float: right;
     box-sizing: border-box;
     border: 0;
     border-radius: 20px;
     color: var(black);
     padding: 1em 1.8em;
     background: var(--primary-color);
-    display: inline-block;
+    float: right;
     transition: 0.2s background;
     align-items: center;
     gap: 0.6em;
@@ -104,6 +109,7 @@
   @media screen and (max-width: 500px) {
     .search-bar{
         width: 100%;
+        font-size: 1rem;
     }
   }
   
