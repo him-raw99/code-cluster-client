@@ -1,9 +1,18 @@
-import React from 'react'
+import React from "react";
+import Footer from "../components/HomePageComponents/Footer";
+import Navbar from "../components/HomePageComponents/Navbar";
+import SearchComponent from "../components/SearchPageComponents/SearchComponent";
 
 function SearchPage() {
   return (
-    <div>SearchPage</div>
-  )
+    <>
+      <div className="SearchPage__body">
+        <Navbar />
+        <SearchComponent/>
+        <Footer />
+      </div>
+    </>
+  );
 }
 
-export default SearchPage
+export default SearchPage;
