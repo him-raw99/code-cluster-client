@@ -3,7 +3,7 @@
   background: linear-gradient(
     0deg,
     rgba(0, 0, 0, 0) 0%,
-    rgba(255, 203, 106, 0.717) 77%
+    rgba(255, 178, 106, 0.717) 77%
   );
   padding-top: 9rem;
 }
@@ -102,7 +102,7 @@
 
   @media screen and (max-width: 670px) {
     .search-bar-holder{
-        padding: 0.5rem;
+        padding: 1rem;
     }
   }
   
