@@ -32,20 +32,20 @@ function AssistBall() {
       >
           <SpeedDialAction
             key="New Code"
-            icon=<NavLink to="/edit"><AddIcon /></NavLink>
+            icon={<NavLink to="/edit"><AddIcon /></NavLink>}
             tooltipTitle="New Code"
             onClick={handleClose}
           />
           
           <SpeedDialAction
             key="Share Code"
-            icon=<ShareIcon />
+            icon={<ShareIcon />}
             tooltipTitle="Share Code"
             onClick={handleClose}
           />
           <SpeedDialAction
             key="Print Code"
-            icon=<PrintIcon />
+            icon={<PrintIcon />}
             tooltipTitle="Print Code"
             onClick={handleClose}
           />
