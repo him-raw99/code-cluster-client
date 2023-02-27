@@ -1,80 +1,46 @@
-.username{
-    font-size: 5rem;
-    text-transform: capitalize;
-    text-align: center;
-    color: white;
-    text-decoration: solid 2px white underline;
-    text-underline-offset: 1rem;
+.username {
+  font-size: 5rem;
+  text-transform: capitalize;
+  text-align: center;
+  color: white;
+  text-decoration: solid 2px white underline;
+  text-underline-offset: 1rem;
 }
 
-.no-code-message{
-    font-size: 3rem;
-    padding: 4rem;
-    text-align: center;
+.no-code-message {
+  font-size: 3rem;
+  padding: 4rem;
+  text-align: center;
 }
 
-.card {
-    margin: 1rem;
-    border-radius: 12px;
-    border: 2px solid rgb(255, 255, 255);
-    height: 18rem;
-    overflow-y: hidden;
-  }
-  
-  .card-head {
-    background-color: rgb(253, 153, 47);
-    border-radius: 8px 8px 0 0;
-    color: white;
-  }
-  
-  .card-heading {
-    font-size: 2rem;
-    display: inline-block;
-    margin: 1rem;
-    margin-right: 2rem;
-  }
-  
-  .more-icon {
-    position: absolute !important;
-    top: 1.1rem;
-    right: 0.4rem;
-  }
-  
-  .code {
-    font-size: 1.1rem;
-    margin: 0.6rem;
-    margin-top: 0.2rem;
-    padding: 0;
-  }
-  
-  .blur {
-    position: absolute;
-    bottom: 0;
-    background: rgb(0, 0, 0);
-    background: linear-gradient(
-      0deg,
-      rgba(245, 209, 156, 0.791),
-      rgba(255, 255, 255, 0.516) 100% 0%
-    );
-    width: 100%;
-    height: 4rem;
-    border-radius: 0 0 8px 8px;
-    backdrop-filter: blur(5px);
-  }
-  
-  .card-button {
-    background-color: rgba(245, 176, 27, 0.9) !important;
-    margin-top: 5% !important ;
-    margin-right: 6% !important ;
-  }
-  .card-button:hover {
-    background-color: rgba(137, 94, 13, 0.9) !important;
-  }
-  
-  .col-sm-6{
-    padding: 0 0 0 1.2rem;
-  }
-  
-  .button-holder{
-    text-align: right;
-  }
+
+.user-card-head {
+  background-color: rgb(253, 153, 47);
+  border-radius: 8px 8px 0 0;
+  color: white;
+}
+
+
+.user-blur {
+  position: absolute;
+  bottom: 0;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    0deg,
+    rgba(245, 209, 156, 0.791),
+    rgba(255, 255, 255, 0.516) 100% 0%
+  );
+  width: 100%;
+  height: 4rem;
+  border-radius: 0 0 8px 8px;
+  backdrop-filter: blur(5px);
+}
+
+.user-card-button {
+  background-color: rgba(245, 176, 27, 0.9) !important;
+  margin-top: 5% !important ;
+  margin-right: 6% !important ;
+}
+.user-card-button:hover {
+  background-color: rgba(137, 94, 13, 0.9) !important;
+}

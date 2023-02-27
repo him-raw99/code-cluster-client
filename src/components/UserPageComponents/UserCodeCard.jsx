@@ -21,7 +21,7 @@ export default function MediaCard(props) {
   return (
     <div className="col-lg-3 col-md-4 col-sm-6">
       <div className="card">
-        <div className="card-head">
+        <div className="user-card-head">
           <h1 className="card-heading">{props.title}</h1>
           <IconButton
             className="more-icon"
@@ -47,11 +47,11 @@ export default function MediaCard(props) {
         <div className="card-body">
           <p className="code newLine">{props.code}</p>
         </div>
-        <div className="blur button-holder">
+        <div className="user-blur button-holder">
           <NavLink to={"/edit/" + props.id}>
             <Button
               variant="contained"
-              className="card-button"
+              className="user-card-button"
               color="secondary"
               size="small"
             >
