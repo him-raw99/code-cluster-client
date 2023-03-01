@@ -8,6 +8,7 @@ import EditPage from "./pages/EditPage";
 import NewCode from "./pages/NewCode";
 import SearchPage from "./pages/SearchPage";
 import UserPage from "./pages/UserPage";
+import Profile from "./pages/Profile";
 import "./App.css";
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
       <Route path="/edit/:id" element={<EditPage/>} />
       <Route path="/search" element={<SearchPage/>} />
       <Route path="/search/:user" element={<UserPage />} />
+      <Route path="/profile" element={<Profile/>} />
       <Route path="*" element={<ErrorPage />} />
     </Routes>
   );

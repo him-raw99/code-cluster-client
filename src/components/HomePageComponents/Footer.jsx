@@ -4,7 +4,10 @@ const year = new Date().getFullYear();
 function Footer() {
   return (
     <>
-      <div className="container" style={{marginTop:"5rem",fontSize:"1.1rem"}}>
+      <div
+        className="container"
+        style={{ marginTop: "5rem", fontSize: "1.1rem" }}
+      >
         <footer className="py-1 ">
           <ul className="nav justify-content-center border-bottom pb-3 mb-3 scroll-fix">
             <li className="nav-item">
@@ -28,9 +31,9 @@ function Footer() {
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link px-4 text-muted" to={"/contact"}>
+              <a target={"_blank"} href="https://linktr.ee/_himanshu_rawat_" className="nav-link px-4 text-muted">
                 Contact
-              </NavLink>
+              </a>
             </li>
           </ul>
           <p className="text-center text-muted">© {year} Code Cluster</p>

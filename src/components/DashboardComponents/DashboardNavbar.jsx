@@ -15,7 +15,6 @@ import { useDispatch } from "react-redux";
 import { logout } from "../../features/auth/authSlice";
 import { NavLink } from "react-router-dom";
 
-const settings = ["Profile", "Account", "Dashboard"];
 function DashboardNavbar() {
   const dispatch = useDispatch();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -182,11 +181,16 @@ function DashboardNavbar() {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
+              <NavLink to="/profile">
+                <MenuItem>
+                  <Typography textAlign="center">View Account</Typography>
                 </MenuItem>
-              ))}
+              </NavLink>
+              <NavLink to="/dashboard">
+                <MenuItem>
+                  <Typography textAlign="center">Dashboard</Typography>
+                </MenuItem>
+              </NavLink>
               <MenuItem
                 onClick={() => {
                   dispatch(logout());
