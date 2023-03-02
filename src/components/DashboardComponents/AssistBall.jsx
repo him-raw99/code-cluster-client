@@ -38,9 +38,9 @@ function AssistBall() {
           />
           
           <SpeedDialAction
-            key="Share Code"
+            key="Share Profile"
             icon={<ShareIcon />}
-            tooltipTitle="Share Code"
+            tooltipTitle="Share Profile"
             onClick={handleClose}
           />
           <SpeedDialAction

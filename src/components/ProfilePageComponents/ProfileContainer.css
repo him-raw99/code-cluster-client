@@ -1,0 +1,33 @@
+.profile-item {
+  background-color: rgb(97, 255, 144);
+  font-size: 2rem;
+  padding: 1rem;
+  width: 70%;
+  margin-inline: auto;
+  text-align: center;
+  margin-top: 2rem;
+  border-radius: 13px;
+  box-shadow: 6px 10px 6px  rgba(235, 171, 250, 0.584);
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.profile-item:hover{
+    transform: translate3d(0px, -10px, 0px);
+    box-shadow: 8px 12px 12px rgba(156, 101, 168, 0.584);
+}
+
+.profile-item h1 {
+  display: inline-block;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 4px;
+}
+
+@media screen and (max-width: 660px) {
+  .profile-item {
+    width: 87%;
+    font-size: 1.5rem;
+    overflow: auto;
+  }
+}
