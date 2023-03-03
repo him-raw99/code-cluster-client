@@ -48,7 +48,7 @@ export default function MediaCard(props) {
           <p className="code newLine">{props.code}</p>
         </div>
         <div className="user-blur button-holder">
-          <NavLink to={"/edit/" + props.id}>
+          <NavLink to={"/search/" + props.user + "/id/" + props.id}>
             <Button
               variant="contained"
               className="user-card-button"

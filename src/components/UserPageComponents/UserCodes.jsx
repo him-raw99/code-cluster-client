@@ -14,7 +14,7 @@ function UserCodes(props) {
           🥲🥲{" "}
         </p>
       ) : (
-        <UserCodeContainer />
+        <UserCodeContainer user={props.user} />
       )}
     </>
   );

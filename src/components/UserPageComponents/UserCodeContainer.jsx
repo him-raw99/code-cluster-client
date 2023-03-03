@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import UserCodeCard from "./UserCodeCard";
-function UserCodeContainer() {
+function UserCodeContainer(props) {
   const codes = useSelector((state) => state.searchUser.codes);
   return (
     <>
@@ -14,6 +14,7 @@ function UserCodeContainer() {
               code={code.code}
               id={code._id}
               isPublic={code.isPublic}
+              user={props.user}
             />
           );
         })}
