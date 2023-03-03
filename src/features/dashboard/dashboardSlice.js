@@ -1,7 +1,10 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import dashboardServices from "./dashboardServices"
 
+const username = localStorage.getItem("username");
+
 const initialState = {
+  username:username?username:"",
   isLoading: false,
   codes: [],
   profile:{},
@@ -35,6 +38,10 @@ const dashboardSlice = createSlice({
   reducers: {
     reset:(state)=>{
       state.codes=[];
+    },
+    setUsername:(state,action)=>{
+      state.username = action.payload;
+      localStorage.setItem("username",action.payload)
     }
   },
   extraReducers: {
@@ -70,5 +77,5 @@ const dashboardSlice = createSlice({
   },
 });
 
-export const {reset} = dashboardSlice.actions;
+export const {reset , setUsername} = dashboardSlice.actions;
 export default dashboardSlice.reducer;

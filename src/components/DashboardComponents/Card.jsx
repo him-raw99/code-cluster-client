@@ -6,20 +6,33 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import "./Card.css";
 import { NavLink } from "react-router-dom";
-
+import { useSelector } from "react-redux";
+import Popup from "./PopUp";
 export default function MediaCard(props) {
+  const {username} = useSelector((store)=>store.dashboard);
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const [popup, setPopup] = React.useState(false);
   const [open, setOpen] = React.useState(false);
   const handleOpen = (event) => {
     setAnchorEl(event.currentTarget);
     setOpen(true);
   };
+
   const handleClose = () => {
     setAnchorEl(null);
     setOpen(false);
   };
 
+  const handleShareCode = () =>{
+    setPopup(true);
+    navigator.clipboard.writeText("code-cluster.netlify.app/search/"+username+"/id/"+props.id);
+    handleClose();
+  }
+
+
   return (
+    <>
+    {popup&&<Popup setPopup={setPopup} message={"Copied to clipboard!"}/>}
     <div className="col-lg-3 col-md-4 col-sm-6">
       <div className="card">
         <div className="card-head">
@@ -42,7 +55,7 @@ export default function MediaCard(props) {
               "aria-labelledby": "basic-button",
             }}
           >
-            <MenuItem onClick={handleClose}>Share code</MenuItem>
+            <MenuItem onClick={handleShareCode}>Share code</MenuItem>
             <NavLink to={"/edit/" + props.id}>
               <MenuItem onClick={handleClose}>Edit code</MenuItem>
             </NavLink>
@@ -65,8 +78,10 @@ export default function MediaCard(props) {
               view / edit code
             </Button>
           </NavLink>
+      
         </div>
       </div>
     </div>
+    </>
   );
 }

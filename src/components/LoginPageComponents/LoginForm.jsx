@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { sendLoginData} from "../../features/auth/authSlice";
 import "./LoginForm.css"
+import { setUsername } from "../../features/dashboard/dashboardSlice";
 
 function LoginForm(props) {
   const dispatch = useDispatch();
@@ -27,6 +28,11 @@ function LoginForm(props) {
 
   function handelShowPassword() {
     setSeePassword((prevVal) => !prevVal);
+  }
+
+  function handelLogin () {
+    dispatch(setUsername(userData.username));
+    dispatch(sendLoginData(userData));
   }
 
   return (
@@ -62,9 +68,7 @@ function LoginForm(props) {
         <Checkbox onClick={handelShowPassword} /> Show password
       </div>
       <Button
-        onClick={() => {
-          dispatch(sendLoginData(userData));
-        }}
+        onClick={handelLogin}
         variant="contained"
         color="success"
         sx={{ marginTop: "5%" }}
