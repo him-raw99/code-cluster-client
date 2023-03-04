@@ -6,6 +6,7 @@ const initialState = {
   success: false,
   error: "",
   codes: [],
+  code:{},
 };
 
 export const searchUser = createAsyncThunk(
@@ -13,6 +14,18 @@ export const searchUser = createAsyncThunk(
   async (state) => {
     try {
       const res = await searchUserServices.searchUser(state);
+      return res.data;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+);
+
+export const searchFullCode = createAsyncThunk(
+  "searchUserSlice/searchFullCode",
+  async (state) => {
+    try {
+      const res = await searchUserServices.searchFullCode(state);
       return res.data;
     } catch (error) {
       console.log(error);
@@ -36,6 +49,23 @@ const searchUserSlice = createSlice({
       state.success = action.payload.success;
     },
     [searchUser.rejected]: (state, action) => {
+      console.log(
+        "-------------------- error has occured while getting users ------------"
+      );
+      state.isLoading = false;
+      state.error = action.payload.error;
+    },
+    [searchFullCode.pending]: (state) => {
+      console.log("pending-getting-users-full-code...");
+      state.isLoading = true;
+    },
+    [searchFullCode.fulfilled]: (state, action) => {
+      console.log("done✌️-getting-users-full-code");
+      state.isLoading = false;
+      state.code = action.payload.code;
+      state.success = action.payload.success;
+    },
+    [searchFullCode.rejected]: (state, action) => {
       console.log(
         "-------------------- error has occured while getting codes ------------"
       );

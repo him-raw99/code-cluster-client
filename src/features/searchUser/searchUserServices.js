@@ -8,6 +8,11 @@ const searchUser = async (state) => {
     return response;
 }
 
-const searchUserServices =  { searchUser };
+const searchFullCode = async(state) => {
+    const response = await axios.get(url+"/user/"+state.user+"/id/"+state.id);
+    return response;
+}
+
+const searchUserServices =  { searchUser ,searchFullCode };
 
 export default searchUserServices;
