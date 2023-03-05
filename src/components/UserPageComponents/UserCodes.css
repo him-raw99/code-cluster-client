@@ -1,5 +1,5 @@
 .username {
-  font-size: 5rem;
+  font-size: 10vw;
   text-transform: capitalize;
   text-align: center;
   color: white;
@@ -53,4 +53,11 @@
     rgba(255, 178, 106, 0.717) 77%
   );
   padding-top: 6rem;
+}
+
+
+@media screen and (max-width: 500px) {
+  .username{
+    font-size: 15vw;
+  }
 }
