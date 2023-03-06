@@ -36,7 +36,11 @@ export const searchFullCode = createAsyncThunk(
 const searchUserSlice = createSlice({
   name: "searchUser",
   initialState,
-  reducers: {},
+  reducers: {
+    reset:(state)=>{
+      state.error="";
+    }
+  },
   extraReducers: {
     [searchUser.pending]: (state) => {
       console.log("pending-getting-user...");
@@ -47,6 +51,9 @@ const searchUserSlice = createSlice({
       state.isLoading = false;
       state.codes = action.payload.codes;
       state.success = action.payload.success;
+      if(!state.success){
+        state.error=action.payload.message;
+      }
     },
     [searchUser.rejected]: (state, action) => {
       console.log(
@@ -75,4 +82,6 @@ const searchUserSlice = createSlice({
   },
 });
 
+
+export const {reset} = searchUserSlice.actions;
 export default searchUserSlice.reducer;

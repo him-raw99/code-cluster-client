@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useSelector } from "react-redux";
 import Footer from "../components/HomePageComponents/Footer";
 import Navbar from "../components/HomePageComponents/Navbar";
+import SnackBar from "../components/LoginPageComponents/SnackBar";
 import SearchComponent from "../components/SearchPageComponents/SearchComponent";
 function SearchPage() {
+  const {error} = useSelector((store)=>store.searchUser);
   return (
     <>
+      {error&&<SnackBar message={error} err={true} />}
       <div className="SearchPage__body">
         <Navbar />
         <svg
