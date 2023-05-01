@@ -14,7 +14,7 @@ function Banner() {
           data-aos-duration="1200"
         >
           <h1 className="banner__heading">
-            Dont know how to use github but want to host your code
+            Don't know how to use GitHub, but want to host your code?
           </h1>
           <NavLink to={"/search"}>
             <Button
