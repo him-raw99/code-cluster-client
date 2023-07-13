@@ -52,35 +52,6 @@ function EditForm(props) {
         });
     }
 
-    const codeString = `
-#include <iostream>
-using namespace std;
-
-int fact(int n){
-    if (n==1)return 1;
-    return n*fact(n-1);
-}
-
-int main() {
-    // Write C++ code here
-    cout << fact(5);
-    
-    //5! = 5X4X3X2X1
-
-    return 0;
-}
-
-// ABC
-/*
-1>ABC
-2>ACB
-3>CAB
-4>CBA
-5>BAC
-6>BCA
-
-*/
-    `;
 
     return (
         <>
