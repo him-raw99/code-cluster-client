@@ -8,7 +8,6 @@ import SaveAsIcon from "@mui/icons-material/SaveAs";
 import Button from "@mui/material/Button";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { useNavigate } from "react-router-dom";
-import SyntaxHighlighter from "react-syntax-highlighter";
 import {
     close,
     deleteModal,
