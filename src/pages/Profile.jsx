@@ -26,7 +26,6 @@ function Profile() {
     <>
       {isLoading && <Loader />}
       <DashboardNavbar />
-      
       <ProfileContainer profile={profile} />
       <NavLink to="/dashboard">
         <Button
